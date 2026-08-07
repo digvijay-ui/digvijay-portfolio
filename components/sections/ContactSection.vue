@@ -80,11 +80,9 @@ onBeforeUnmount(() => {
           </div>
 
           <div class="contact-details__item">
-            <dt>Phone</dt>
+            <dt></dt>
             <dd>
-              <a :href="contact.phoneHref" class="contact-link">
-                {{ contact.phone }}
-              </a>
+             
             </dd>
           </div>
         </dl>

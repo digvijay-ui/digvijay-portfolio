@@ -207,8 +207,6 @@ export const portfolioData: PortfolioData = {
     description:
       "I'm currently open to Full Stack and Frontend Developer opportunities in Bangalore or remote.",
     email: 'rajputdigvijaysinh45@gmail.com',
-    phone: '+91 9313445455',
-    phoneHref: 'tel:+919313445455',
     location: 'Bangalore, Karnataka, India',
   },
   socialLinks: [

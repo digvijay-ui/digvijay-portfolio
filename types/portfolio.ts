@@ -68,8 +68,6 @@ export interface ContactInfo {
   heading: string
   description: string
   email: string
-  phone: string
-  phoneHref: string
   location: string
 }
 

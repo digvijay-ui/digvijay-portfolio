@@ -40,6 +40,7 @@ lerna-debug.log*
 # Editor and OS files
 .vscode/
 .idea/
+.gitkeep
 *.swp
 *.swo
 .DS_Store

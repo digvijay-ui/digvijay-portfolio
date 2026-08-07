@@ -10,6 +10,11 @@ export interface QuickFact {
   value: string
 }
 
+export interface AboutContent {
+  heading: string
+  paragraphs: string[]
+}
+
 export interface Experience {
   id: string
   title: string
@@ -61,6 +66,7 @@ export interface PortfolioData {
   role: string
   location: string
   email: string
+  about: AboutContent
   navigation: NavigationItem[]
   quickFacts: QuickFact[]
   experience: Experience[]

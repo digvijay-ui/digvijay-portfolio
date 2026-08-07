@@ -1,4 +1,10 @@
 export default defineNuxtConfig({
+  devtools: {
+    enabled: false,
+  },
+  experimental: {
+    appManifest: false,
+  },
   modules: ['@nuxtjs/tailwindcss'],
   css: ['~/assets/css/main.css'],
   typescript: {

@@ -29,7 +29,7 @@
     </div>
 
     <div class="hero-mobile-copy">
-      <h2 class="hero-mobile-name">Digvijaysinh Rajput</h2>
+      <p class="hero-mobile-name">Digvijaysinh Rajput</p>
       <p class="hero-mobile-stack">Vue · React · TypeScript · Node.js</p>
       <a
         href="https://github.com/digvijay-ui"
@@ -69,9 +69,9 @@
 }
 
 .hero-image {
-  width: 100%;
-  height: 100%;
   display: block;
+  width: 100%;
+  height: auto;
   object-fit: contain;
 }
 
@@ -122,6 +122,7 @@
   font-family: var(--font-mono);
   font-size: 0.875rem;
   line-height: 1;
+  min-height: 44px;
   padding: 10px 14px;
   text-decoration: none;
   transition:
@@ -158,13 +159,16 @@
   }
 
   .hero-artwork {
-    width: 100%;
-    max-width: var(--artwork-width);
+    width: calc(100vw - 40px);
+    max-width: 100%;
+    align-self: center;
+    flex: 0 0 auto;
   }
 
   .hero-image {
     width: 100%;
-    height: 100%;
+    max-width: 100%;
+    height: auto;
   }
 
   .hero-hotspot {
@@ -194,6 +198,8 @@
 
   .hero-mobile-link {
     display: inline-flex;
+    align-items: center;
+    min-height: 44px;
     width: fit-content;
     margin-top: 18px;
     border: 1px solid var(--color-border);

@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="title desc">
   <title id="title">Digvijaysinh Rajput Portfolio 2026</title>
   <desc id="desc">Black and neon green retro-futuristic portfolio hero banner with a cartoon boy wearing glasses.</desc>
   <defs>
@@ -51,7 +51,7 @@
 
   <!-- Year and main title -->
   <text x="238" y="192" fill="#b6ff4a" font-family="ui-monospace, monospace" font-size="40" letter-spacing="3">/2026/</text>
-  <text x="225" y="395" fill="url(#titleGrad)" font-family="Georgia, 'Times New Roman', serif" font-size="230" font-weight="700" letter-spacing="-18">PORTFOLIO</text>
+  <text x="205" y="385" fill="url(#titleGrad)" font-family="Georgia, 'Times New Roman', serif" font-size="205" font-weight="700" letter-spacing="-16">PORTFOLIO</text>
 
   <!-- Decorative star -->
   <g transform="translate(1170 155)" fill="#b6ff4a" filter="url(#softGlow)">
@@ -142,11 +142,10 @@
   <!-- Welcome and footer -->
   <text x="800" y="770" text-anchor="middle" fill="#b6ff4a" font-family="ui-monospace, monospace" font-size="34" letter-spacing="13">/WELCOME/</text>
   <text x="64" y="832" text-anchor="start" fill="#d9e7d0" font-family="Arial, sans-serif" font-size="18" letter-spacing="1">github.com/digvijay-ui</text>
-  <text x="1536" y="832" text-anchor="end" fill="#d9e7d0" font-family="Arial, sans-serif" font-size="18" letter-spacing="1">BENGALURU · INDIA</text>
+  <text x="1536" y="832" text-anchor="end" fill="#d9e7d0" font-family="Arial, sans-serif" font-size="18" letter-spacing="1">BANGALORE · INDIA</text>
 
   <!-- Accent marks -->
   <g fill="#b6ff4a">
-    <path d="M1450 48h18l-20 24h-18zM1477 48h18l-20 24h-18zM1504 48h18l-20 24h-18z"/>
     <path d="M752 824h18l-20 24h-18zM779 824h18l-20 24h-18zM806 824h18l-20 24h-18zM833 824h18l-20 24h-18z"/>
   </g>
 </svg>

@@ -148,7 +148,7 @@
   <!-- Welcome and footer -->
   <text x="800" y="770" text-anchor="middle" fill="#b6ff4a" font-family="ui-monospace, monospace" font-size="34" letter-spacing="13">/WELCOME/</text>
   <text x="75" y="832" fill="#d9e7d0" font-family="Arial, sans-serif" font-size="18" letter-spacing="1">github.com/digvijay-ui</text>
-  <text x="1240" y="832" fill="#d9e7d0" font-family="Arial, sans-serif" font-size="18" letter-spacing="1">BENGALURU · INDIA</text>
+  <text x="1240" y="832" fill="#d9e7d0" font-family="Arial, sans-serif" font-size="18" letter-spacing="1">BANGALORE · INDIA</text>
 
   <!-- Accent marks -->
   <g fill="#b6ff4a">

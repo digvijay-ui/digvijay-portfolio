@@ -19,6 +19,8 @@ defineProps<ExperienceCardProps>()
           :alt="experience.logoAlt || `${experience.company} logo`"
           width="48"
           height="48"
+          loading="lazy"
+          decoding="async"
           class="experience-card__logo-image"
         >
         <span v-else class="experience-card__initials" aria-hidden="true">

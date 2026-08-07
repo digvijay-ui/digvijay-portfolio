@@ -55,12 +55,22 @@ export interface SkillGroup {
 
 export interface Education {
   id: string
-  title: string
+  degree: string
+  field: string
   institution: string
   university: string
-  period: string
   location: string
+  period: string
+  cpi: string
+}
+
+export interface ContactInfo {
+  heading: string
   description: string
+  email: string
+  phone: string
+  phoneHref: string
+  location: string
 }
 
 export interface SocialLink {
@@ -80,6 +90,7 @@ export interface PortfolioData {
   experiences: Experience[]
   projects: Project[]
   skillGroups: SkillGroup[]
-  education: Education[]
+  education: Education
+  contact: ContactInfo
   socialLinks: SocialLink[]
 }

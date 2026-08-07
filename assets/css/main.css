@@ -7,7 +7,7 @@
 
   --color-text-primary: #ffffff;
   --color-text-secondary: #a1a1aa;
-  --color-text-muted: #5c5c60;
+  --color-text-muted: #7a7a82;
 
   --color-accent: #b6ff4a;
   --color-accent-strong: #39ff6a;
@@ -104,5 +104,24 @@ a {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+  }
+}
+
+@media (scripting: none) {
+  .about-section__heading,
+  .about-section__content,
+  .experience-section__heading,
+  .experience-section__content,
+  .projects-section__heading,
+  .projects-section__intro-block,
+  .projects-section__list,
+  .skills-section__heading,
+  .skills-section__content,
+  .education-section__heading,
+  .education-block,
+  .contact-section__meta-block,
+  .contact-section__content {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }

@@ -30,18 +30,6 @@ defineProps<ExperienceCardProps>()
 
       <div class="experience-card__identity">
         <h3 class="experience-card__role">{{ experience.role }}</h3>
-        <a
-          v-if="experience.companyUrl"
-          :href="experience.companyUrl"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="experience-card__company"
-        >
-          {{ experience.company }}
-        </a>
-        <p v-else class="experience-card__company">
-          {{ experience.company }}
-        </p>
       </div>
 
       <div class="experience-card__meta">
@@ -98,17 +86,11 @@ defineProps<ExperienceCardProps>()
   width: 48px;
   height: 48px;
   place-items: center;
-  overflow: hidden;
-  border: 1px solid var(--color-border);
-  border-radius: 999px;
-  background: var(--color-surface-alt);
-  padding: 6px;
 }
 
 .experience-card__logo-image {
   width: 100%;
   height: 100%;
-  border-radius: 999px;
   object-fit: contain;
 }
 
@@ -131,29 +113,6 @@ defineProps<ExperienceCardProps>()
   font-size: clamp(1.5rem, 3vw, 1.75rem);
   font-weight: 700;
   line-height: 1.15;
-}
-
-.experience-card__company {
-  display: inline-flex;
-  width: fit-content;
-  margin: 10px 0 0;
-  color: var(--color-accent);
-  font-family: var(--font-mono);
-  font-size: 0.875rem;
-  line-height: 1.5;
-  text-decoration: none;
-}
-
-a.experience-card__company {
-  border-bottom: 1px solid transparent;
-  transition:
-    border-color 180ms ease-out,
-    color 180ms ease-out;
-}
-
-a.experience-card__company:hover {
-  border-color: var(--color-accent);
-  color: var(--color-text-primary);
 }
 
 .experience-card__meta {
@@ -226,8 +185,7 @@ a.experience-card__company:hover {
   color: var(--color-accent);
 }
 
-.experience-card__link:focus-visible,
-.experience-card__company:focus-visible {
+.experience-card__link:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 5px;
 }

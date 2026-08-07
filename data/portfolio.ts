@@ -205,7 +205,7 @@ export const portfolioData: PortfolioData = {
   contact: {
     heading: "Let's build something.",
     description:
-      "I'm currently open to Full Stack and Frontend Developer opportunities in Bangalore or remote.",
+      "I'm currently open to Full Stack and Frontend Developer opportunities in Bangalore .",
     email: 'rajputdigvijaysinh45@gmail.com',
     location: 'Bangalore, Karnataka, India',
   },

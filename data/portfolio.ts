@@ -9,7 +9,7 @@ export const portfolioData: PortfolioData = {
     heading: 'Building reliable web experiences.',
     paragraphs: [
       'I’m Digvijaysinh Rajput, a Full Stack Developer and 2026 B.E. Information Technology graduate. I currently work as a Full Stack Developer Intern at Brainzym Private Ltd, where I build and maintain production web applications using Vue.js, TypeScript, Node.js, Express and PostgreSQL.',
-      'I enjoy developing responsive interfaces, REST APIs and reliable full-stack features. I am currently seeking Full Stack or Frontend Developer opportunities in Bangalore or remote.',
+      'I enjoy developing responsive interfaces, REST APIs and reliable full-stack features. I am currently seeking Full Stack or Frontend Developer opportunities in Bangalore.',
     ],
   },
   navigation: [
@@ -200,12 +200,12 @@ export const portfolioData: PortfolioData = {
     university: 'KSV University',
     location: 'Gandhinagar, Gujarat',
     period: '2022 – 2026',
-    cpi: '7.51 / 10',
+    cgpa: '7.51 / 10',
   },
   contact: {
     heading: "Let's build something.",
     description:
-      "I'm currently open to Full Stack and Frontend Developer opportunities in Bangalore .",
+      "I'm currently open to Full Stack and Frontend Developer opportunities in Bangalore.",
     email: 'rajputdigvijaysinh45@gmail.com',
     location: 'Bangalore, Karnataka, India',
   },

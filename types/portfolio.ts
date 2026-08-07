@@ -61,7 +61,7 @@ export interface Education {
   university: string
   location: string
   period: string
-  cpi: string
+  cgpa: string
 }
 
 export interface ContactInfo {

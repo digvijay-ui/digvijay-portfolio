@@ -57,3 +57,5 @@ test-results/
 cypress/screenshots/
 cypress/videos/
 *.tsbuildinfo
+.vercel
+.env*

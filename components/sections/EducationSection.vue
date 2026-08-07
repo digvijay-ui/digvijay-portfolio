@@ -78,9 +78,9 @@ onBeforeUnmount(() => {
             <dd>{{ education.location }}</dd>
           </div>
 
-          <div class="education-meta__item education-meta__item--cpi">
-            <dt>CPI</dt>
-            <dd>{{ education.cpi }}</dd>
+          <div class="education-meta__item education-meta__item--cgpa">
+            <dt>CGPA</dt>
+            <dd>{{ education.cgpa }}</dd>
           </div>
         </dl>
       </article>
@@ -195,7 +195,7 @@ onBeforeUnmount(() => {
   line-height: 1.5;
 }
 
-.education-meta__item--cpi dd {
+.education-meta__item--cgpa dd {
   color: var(--color-accent);
 }
 

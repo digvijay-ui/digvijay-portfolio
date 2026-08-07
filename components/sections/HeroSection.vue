@@ -82,16 +82,6 @@
   border-radius: 4px;
   background: transparent;
   cursor: pointer;
-  transition:
-    background-color 180ms ease-out,
-    border-color 180ms ease-out,
-    box-shadow 180ms ease-out;
-}
-
-.hero-hotspot:hover {
-  border-color: var(--color-accent);
-  background: var(--color-accent-glow);
-  box-shadow: 0 0 18px var(--color-accent-glow);
 }
 
 .hero-hotspot:focus-visible {

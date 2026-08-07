@@ -17,26 +17,34 @@ export interface AboutContent {
 
 export interface Experience {
   id: string
-  title: string
+  role: string
   company: string
+  companyUrl?: string
+  logo?: string
+  logoAlt?: string
+  initials: string
   period: string
   location: string
-  description: string
+  startDate: string
+  endDate: string
   achievements: string[]
   technologies: string[]
-}
-
-export interface ProjectLink {
-  label: string
-  href: string
+  linkedinUrl?: string
 }
 
 export interface Project {
   id: string
+  number: string
   title: string
+  subtitle?: string
+  role?: string
   description: string
+  highlights: string[]
   technologies: string[]
-  links: ProjectLink[]
+  image: string
+  imageAlt: string
+  githubUrl: string
+  liveUrl: string
 }
 
 export interface SkillGroup {
@@ -69,7 +77,7 @@ export interface PortfolioData {
   about: AboutContent
   navigation: NavigationItem[]
   quickFacts: QuickFact[]
-  experience: Experience[]
+  experiences: Experience[]
   projects: Project[]
   skillGroups: SkillGroup[]
   education: Education[]

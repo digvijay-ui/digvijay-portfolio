@@ -1,16 +1,59 @@
 <script setup lang="ts">
+import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { portfolioData } from '~/data/portfolio'
 import SectionHeading from '~/components/ui/SectionHeading.vue'
+
+const sectionRef = ref<HTMLElement | null>(null)
+const isVisible = ref(false)
+
+let observer: IntersectionObserver | null = null
+
+onMounted(() => {
+  if (!sectionRef.value) {
+    return
+  }
+
+  if (!('IntersectionObserver' in window)) {
+    isVisible.value = true
+    return
+  }
+
+  observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry?.isIntersecting) {
+        isVisible.value = true
+        observer?.disconnect()
+      }
+    },
+    {
+      threshold: 0.22,
+    },
+  )
+
+  observer.observe(sectionRef.value)
+})
+
+onBeforeUnmount(() => {
+  observer?.disconnect()
+})
 </script>
 
 <template>
-  <section id="about" class="about-section" aria-labelledby="about-title">
+  <section
+    id="about"
+    ref="sectionRef"
+    class="about-section"
+    :class="{ 'about-section--visible': isVisible }"
+    aria-labelledby="about-title"
+  >
     <div class="about-section__inner">
-      <SectionHeading
-        number="01"
-        label="// About"
-        :title="portfolioData.about.heading"
-      />
+      <div class="about-section__heading">
+        <SectionHeading
+          number="01"
+          label="// About"
+          :title="portfolioData.about.heading"
+        />
+      </div>
 
       <div class="about-section__content">
         <div class="about-section__copy">
@@ -39,7 +82,6 @@ import SectionHeading from '~/components/ui/SectionHeading.vue'
 
 <style scoped>
 .about-section {
-  border-top: 1px solid var(--color-border);
   background: var(--color-page);
   padding: 120px 24px;
 }
@@ -50,12 +92,27 @@ import SectionHeading from '~/components/ui/SectionHeading.vue'
   margin: 0 auto;
   grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
   gap: clamp(48px, 8vw, 112px);
-  animation: about-enter 520ms ease-out both;
+}
+
+.about-section__heading,
+.about-section__content {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 1000ms ease-out,
+    transform 1000ms ease-out;
 }
 
 .about-section__content {
   display: grid;
   gap: 48px;
+  transition-delay: 160ms;
+}
+
+.about-section--visible .about-section__heading,
+.about-section--visible .about-section__content {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .about-section__copy {
@@ -112,18 +169,6 @@ import SectionHeading from '~/components/ui/SectionHeading.vue'
   line-height: 1.25;
 }
 
-@keyframes about-enter {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 @media (max-width: 1023px) {
   .about-section__inner {
     grid-template-columns: 1fr;
@@ -152,8 +197,11 @@ import SectionHeading from '~/components/ui/SectionHeading.vue'
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .about-section__inner {
-    animation: none;
+  .about-section__heading,
+  .about-section__content {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 
   .quick-fact {

@@ -200,7 +200,7 @@ export const portfolioData: PortfolioData = {
     university: 'KSV University',
     location: 'Gandhinagar, Gujarat',
     period: '2022 – 2026',
-    cgpa: '7.51 / 10',
+    cgpa: '7.51 ',
   },
   contact: {
     heading: "Let's build something.",

@@ -4,7 +4,7 @@ Single-page developer portfolio for Digvijaysinh Rajput, built with Nuxt 3, Vue 
 
 ## Live Link
 
-[https://portfolio-nine-umber-zeaqrqjrrl.vercel.app/](https://portfolio-nine-umber-zeaqrqjrrl.vercel.app/)
+[https://digvijay-portfolio-cyan.vercel.app/](https://digvijay-portfolio-cyan.vercel.app/)
 
 ## Tech Stack
 
@@ -43,4 +43,3 @@ npm run typecheck
 ```bash
 npm run build
 ```
-

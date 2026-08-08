@@ -41,7 +41,7 @@ export default defineNuxtConfig({
         {
           property: 'og:description',
           content:
-            'Portfolio of Digvijaysinh Rajput, a Full Stack Developer building responsive web applications and REST APIs with Vue.js, React, TypeScript, Node.js, PostgreSQL and MongoDB.',
+            'Full-stack portfolio with Vue, React, TypeScript, Node.js and production-ready web apps.',
         },
         {
           property: 'og:type',

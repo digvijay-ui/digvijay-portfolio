@@ -34,6 +34,10 @@ const isRightAligned = Number(props.project.number) % 2 === 0
         {{ project.description }}
       </p>
 
+      <p class="project-showcase__impact">
+        <strong>{{ project.impact }}</strong>
+      </p>
+
       <div v-if="project.role" class="project-showcase__role">
         <p>ROLE</p>
         <span>{{ project.role }}</span>
@@ -152,6 +156,18 @@ const isRightAligned = Number(props.project.number) % 2 === 0
   color: var(--color-text-secondary);
   font-size: clamp(1rem, 1.5vw, 1.125rem);
   line-height: 1.75;
+}
+
+.project-showcase__impact {
+  max-width: 68ch;
+  margin: 20px 0 0;
+  color: var(--color-text-primary);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.project-showcase__impact strong {
+  font-weight: 700;
 }
 
 .project-showcase__role {

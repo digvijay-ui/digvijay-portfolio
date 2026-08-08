@@ -50,6 +50,7 @@ Thumbs.db
 .cache/
 .vite/
 .turbo/
+docs/file:/
 .eslintcache
 .stylelintcache
 playwright-report/

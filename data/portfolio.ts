@@ -23,7 +23,7 @@ export const portfolioData: PortfolioData = {
     {
       id: 'experience',
       label: 'Experience',
-      value: '6+ months',
+      value: '2 Projects Shipped',
     },
     {
       id: 'location',
@@ -67,10 +67,15 @@ export const portfolioData: PortfolioData = {
         'Zod',
       ],
       achievements: [
+        // TODO(digvijay): Add the number of production features or modules shipped at Brainzym.
         "Developed and maintained full-stack features for Brainzym's core web platform using Vue.js, TypeScript, Node.js, Express and PostgreSQL.",
+        // TODO(digvijay): Add the number of reusable admin dashboard components if you have it.
         'Took ownership of the admin dashboard module, building reusable Vue components with form handling, Zod validation, API error handling and production-focused testing.',
+        // TODO(digvijay): Add the CSV import scale, such as row count or student records processed.
         'Designed and implemented a passcode-based student login flow covering Express API endpoints, PostgreSQL schema changes and bulk CSV imports.',
+        // TODO(digvijay): Add bug count, stability percentage or response-time improvement if tracked.
         'Troubleshot and improved existing frontend and backend modules, resolving bugs and improving application stability.',
+        // TODO(digvijay): Add team size or sprint cadence if you want this quantified.
         'Collaborated with the tech lead and product owner in an Agile team, participating in sprint planning, sprint reviews, code reviews and technical discussions.',
       ],
     },
@@ -84,11 +89,14 @@ export const portfolioData: PortfolioData = {
       role: 'Full Stack Development',
       description:
         'A full-stack event booking platform with authentication, event browsing, seat reservation, wallet-based payments, booking history and a role-based admin panel.',
+      impact:
+        'Concurrency-safe seat reservation flow designed to reduce double-booking risk.',
       highlights: [
+        // TODO(digvijay): Add tested concurrent booking count if you have it.
         'Built seat selection and temporary reservation flows designed to prevent double booking.',
-        'Implemented wallet-based booking confirmation and transaction handling.',
-        'Added JWT authentication, Zod request validation and role-based admin functionality.',
-        'Built admin workflows for events, seats, bookings, transactions, cancellations and refunds.',
+        'Implemented 2 payment-side flows for wallet-based booking confirmation and transaction handling.',
+        'Added 3 protection layers with JWT authentication, Zod request validation and role-based admin functionality.',
+        'Built 6 admin workflows for events, seats, bookings, transactions, cancellations and refunds.',
       ],
       technologies: [
         'Vue 3',
@@ -117,12 +125,16 @@ export const portfolioData: PortfolioData = {
       role: 'Frontend Development',
       description:
         'A responsive e-waste management platform connecting users with collection agents while supporting pickup scheduling, education, rewards and administrative workflows.',
+      impact:
+        'Mapbox-powered pickup flow connects users and collection agents through location-aware UI.',
       highlights: [
+        // TODO(digvijay): Add the number of screens or frontend components built.
         'Built the frontend using React and TypeScript.',
-        'Developed user, collection-agent and admin experiences.',
+        'Developed 3 role-based experiences for users, collection agents and admins.',
         'Integrated pickup location functionality using Mapbox.',
+        // TODO(digvijay): Add the number of REST endpoints consumed if you have it.
         'Consumed REST APIs through Axios with loading and error handling.',
-        'Built responsive interfaces for pickup, rewards, education and community workflows.',
+        'Built responsive interfaces across 4 product workflows: pickup, rewards, education and community.',
       ],
       technologies: ['React', 'TypeScript', 'React Router', 'Axios', 'Mapbox'],
       image: '/images/projects/digital-dump.png',
@@ -205,7 +217,7 @@ export const portfolioData: PortfolioData = {
   contact: {
     heading: "Let's build something.",
     description:
-      "I'm currently open to Full Stack and Frontend Developer opportunities in Bangalore.",
+      'Have a Full Stack or Frontend role in Bangalore? Send me a message and I’ll get back quickly.',
     email: 'rajputdigvijaysinh45@gmail.com',
     location: 'Bangalore, Karnataka, India',
   },

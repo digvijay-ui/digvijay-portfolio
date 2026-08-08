@@ -39,6 +39,7 @@ export interface Project {
   subtitle?: string
   role?: string
   description: string
+  impact: string
   highlights: string[]
   technologies: string[]
   image: string

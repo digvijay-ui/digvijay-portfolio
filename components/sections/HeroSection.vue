@@ -41,10 +41,30 @@
       </a>
     </div>
 
-    <a href="#about" class="hero-cta">
-      Explore portfolio
-      <span aria-hidden="true">↓</span>
-    </a>
+    <div class="hero-actions">
+      <a href="/resume.pdf" download class="hero-cta hero-cta--secondary">
+        <svg
+          class="hero-cta__icon"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <path
+            d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+        Download Resume
+      </a>
+      <a href="#about" class="hero-cta">
+        Explore portfolio
+        <span aria-hidden="true">↓</span>
+      </a>
+    </div>
   </section>
 </template>
 
@@ -100,6 +120,13 @@
   display: none;
 }
 
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
 .hero-cta {
   display: inline-flex;
   align-items: center;
@@ -125,6 +152,20 @@
   border-color: var(--color-accent);
   box-shadow: 0 0 24px var(--color-accent-glow);
   color: var(--color-text-primary);
+}
+
+.hero-cta__icon {
+  width: 0.875rem;
+  height: 0.875rem;
+  flex: 0 0 auto;
+}
+
+.hero-cta--secondary {
+  color: var(--color-text-primary);
+}
+
+.hero-cta--secondary:hover {
+  color: var(--color-accent);
 }
 
 @keyframes hero-enter {
@@ -212,8 +253,13 @@
     color: var(--color-text-primary);
   }
 
-  .hero-cta {
+  .hero-actions {
     align-self: flex-start;
+    justify-content: flex-start;
+  }
+
+  .hero-cta {
+    width: fit-content;
   }
 }
 

@@ -51,7 +51,7 @@ onBeforeUnmount(() => {
       <div class="projects-section__heading">
         <SectionHeading
           number="03"
-          label="// Projects"
+          label="Projects"
           title="Featured work."
         />
       </div>

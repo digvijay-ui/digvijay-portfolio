@@ -51,7 +51,7 @@ onBeforeUnmount(() => {
       <div class="education-section__heading">
         <SectionHeading
           number="05"
-          label="// Education"
+          label="Education"
           title="Academic foundation."
         />
       </div>

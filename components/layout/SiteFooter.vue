@@ -3,7 +3,7 @@
     <div class="site-footer__inner">
       <p>© 2026 Digvijaysinh Rajput</p>
 
-      <p>Built with Nuxt 3 · Vue 3 · TypeScript · Tailwind CSS</p>
+      <p></p>
 
       <a href="#home">Back to top ↑</a>
     </div>

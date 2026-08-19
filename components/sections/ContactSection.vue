@@ -52,7 +52,7 @@ onBeforeUnmount(() => {
       <div class="contact-section__meta-block">
         <p class="contact-section__meta">
           <span>06</span>
-          <span>// Contact</span>
+          <span>Contact</span>
         </p>
 
         <p class="contact-section__command">ready-to-build? --say-hello</p>

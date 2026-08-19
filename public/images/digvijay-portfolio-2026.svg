@@ -137,6 +137,26 @@
       <rect x="-43" y="-39" width="86" height="78" rx="12" fill="#0a0f09" stroke="#b6ff4a" stroke-width="2.5"/>
       <text x="0" y="12" fill="#b6ff4a" font-size="24">Node</text>
     </g>
+    <g transform="translate(188 462) rotate(12)">
+      <rect x="-46" y="-39" width="92" height="78" rx="12" fill="#0a0f09" stroke="#b6ff4a" stroke-width="2.5"/>
+      <path d="M-46-39L0-58L46-39L0-20Z" fill="#111a0f" stroke="#b6ff4a" stroke-width="2.5"/>
+      <path d="M46-39L58-31V31L46 39Z" fill="#0f170e" stroke="#b6ff4a" stroke-width="2.5"/>
+      <text x="0" y="12" fill="#b6ff4a" font-size="24">React</text>
+    </g>
+    <g transform="translate(1412 462) rotate(-12)">
+      <rect x="-46" y="-39" width="92" height="78" rx="12" fill="#0a0f09" stroke="#b6ff4a" stroke-width="2.5"/>
+      <path d="M-46-39L0-58L46-39L0-20Z" fill="#111a0f" stroke="#b6ff4a" stroke-width="2.5"/>
+      <path d="M46-39L58-31V31L46 39Z" fill="#0f170e" stroke="#b6ff4a" stroke-width="2.5"/>
+      <text x="0" y="12" fill="#b6ff4a" font-size="28">API</text>
+    </g>
+    <g transform="translate(402 682) rotate(9)">
+      <rect x="-43" y="-39" width="86" height="78" rx="12" fill="#0a0f09" stroke="#b6ff4a" stroke-width="2.5"/>
+      <text x="0" y="12" fill="#b6ff4a" font-size="30">DB</text>
+    </g>
+    <g transform="translate(1198 688) rotate(-10)">
+      <rect x="-43" y="-39" width="86" height="78" rx="12" fill="#0a0f09" stroke="#b6ff4a" stroke-width="2.5"/>
+      <text x="0" y="12" fill="#b6ff4a" font-size="30">Git</text>
+    </g>
   </g>
 
   <!-- Welcome and footer -->

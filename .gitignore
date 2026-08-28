@@ -60,3 +60,4 @@ cypress/videos/
 *.tsbuildinfo
 .vercel
 .env*
+/* remove uncessary thing from img */

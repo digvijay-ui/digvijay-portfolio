@@ -60,3 +60,8 @@ cypress/videos/
 *.tsbuildinfo
 .vercel
 .env*
+
+# Personal OG image assets
+public/og-image.png
+public/images/digvijay-og-profile.jpg
+public/images/digvijay-og-profile-circle.png

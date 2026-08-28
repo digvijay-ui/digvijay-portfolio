@@ -18,7 +18,7 @@ const homepageUrl = new URL('/', siteUrl).toString()
 const socialImagePath = '/og-image.png'
 const socialImageUrl = new URL(socialImagePath, siteUrl).toString()
 const socialImageAlt =
-  'Open Graph image for Digvijaysinh Rajput, Full Stack Developer, featuring Vue, React, TypeScript and Node.js'
+  'Open Graph image for Digvijaysinh Rajput, Full Stack Developer, featuring Vue, TypeScript, Node.js and psql'
 
 const personSchema = {
   '@context': 'https://schema.org',

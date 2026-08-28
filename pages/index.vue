@@ -15,10 +15,10 @@ const seoDescription =
 const runtimeConfig = useRuntimeConfig()
 const siteUrl = String(runtimeConfig.public.siteUrl)
 const homepageUrl = new URL('/', siteUrl).toString()
-const socialImagePath = '/og-image-whatsapp.jpg'
-const socialImageUrl = new URL(socialImagePath, siteUrl).toString()
+const socialImageUrl =
+  'https://digvijay-portfolio-cyan.vercel.app/og-image-v2.png'
 const socialImageAlt =
-  'Open Graph image for Digvijaysinh Rajput, Full Stack Developer, featuring Vue, TypeScript, Node.js and psql'
+  'Open Graph image for Digvijaysinh Rajput, Full Stack Developer, featuring Vue, React, TypeScript, Node.js and PostgreSQL'
 
 const personSchema = {
   '@context': 'https://schema.org',
@@ -57,7 +57,7 @@ useSeoMeta({
   ogImageAlt: socialImageAlt,
   ogImageWidth: 1200,
   ogImageHeight: 630,
-  ogImageType: 'image/jpeg',
+  ogImageType: 'image/png',
   twitterCard: 'summary_large_image',
   twitterTitle: 'Digvijaysinh Rajput | Full Stack Developer',
   twitterDescription: seoDescription,
@@ -70,12 +70,6 @@ useHead({
     {
       rel: 'canonical',
       href: homepageUrl,
-    },
-  ],
-  meta: [
-    {
-      property: 'og:image:secure_url',
-      content: socialImageUrl,
     },
   ],
   script: [

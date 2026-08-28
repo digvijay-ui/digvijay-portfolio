@@ -15,7 +15,7 @@ const seoDescription =
 const runtimeConfig = useRuntimeConfig()
 const siteUrl = String(runtimeConfig.public.siteUrl)
 const homepageUrl = new URL('/', siteUrl).toString()
-const socialImagePath = '/og-image.png'
+const socialImagePath = '/og-image-whatsapp.jpg'
 const socialImageUrl = new URL(socialImagePath, siteUrl).toString()
 const socialImageAlt =
   'Open Graph image for Digvijaysinh Rajput, Full Stack Developer, featuring Vue, TypeScript, Node.js and psql'
@@ -57,7 +57,7 @@ useSeoMeta({
   ogImageAlt: socialImageAlt,
   ogImageWidth: 1200,
   ogImageHeight: 630,
-  ogImageType: 'image/png',
+  ogImageType: 'image/jpeg',
   twitterCard: 'summary_large_image',
   twitterTitle: 'Digvijaysinh Rajput | Full Stack Developer',
   twitterDescription: seoDescription,

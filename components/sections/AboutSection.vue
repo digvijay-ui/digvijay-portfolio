@@ -9,7 +9,9 @@ const isVisible = ref(false)
 let observer: IntersectionObserver | null = null
 
 onMounted(() => {
-  if (!sectionRef.value) {
+  const section = sectionRef.value
+
+  if (!(section instanceof Element)) {
     return
   }
 
@@ -30,7 +32,7 @@ onMounted(() => {
     },
   )
 
-  observer.observe(sectionRef.value)
+  observer.observe(section)
 })
 
 onBeforeUnmount(() => {

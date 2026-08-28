@@ -11,7 +11,9 @@ const emailHref = computed(() => `mailto:${contact.email}`)
 let observer: IntersectionObserver | null = null
 
 onMounted(() => {
-  if (!sectionRef.value) {
+  const section = sectionRef.value
+
+  if (!(section instanceof Element)) {
     return
   }
 
@@ -32,7 +34,7 @@ onMounted(() => {
     },
   )
 
-  observer.observe(sectionRef.value)
+  observer.observe(section)
 })
 
 onBeforeUnmount(() => {
@@ -73,13 +75,17 @@ onBeforeUnmount(() => {
           <div class="contact-details__item">
             <dt>Email</dt>
             <dd>
-              <a :href="emailHref" class="contact-link contact-link--email">
+              <a
+                :href="emailHref"
+                class="contact-link contact-link--email"
+                aria-label="Email Digvijaysinh Rajput"
+              >
                 {{ contact.email }}
               </a>
             </dd>
           </div>
 
-          <div class="contact-details__item">
+          <div class="contact-details__item" aria-hidden="true">
             <dt></dt>
             <dd>
              
@@ -95,6 +101,7 @@ onBeforeUnmount(() => {
             target="_blank"
             rel="noopener noreferrer"
             class="contact-social"
+            :aria-label="`Open Digvijaysinh Rajput's ${link.label} profile in a new tab`"
           >
             {{ link.label }} ↗
           </a>

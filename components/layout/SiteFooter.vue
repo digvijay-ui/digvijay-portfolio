@@ -3,7 +3,7 @@
     <div class="site-footer__inner">
       <p>© 2026 Digvijaysinh Rajput</p>
 
-      <p></p>
+      <p aria-hidden="true"></p>
 
       <a href="#home">Back to top ↑</a>
     </div>

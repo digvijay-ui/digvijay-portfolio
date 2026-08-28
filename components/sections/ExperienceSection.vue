@@ -10,7 +10,9 @@ const isVisible = ref(false)
 let observer: IntersectionObserver | null = null
 
 onMounted(() => {
-  if (!sectionRef.value) {
+  const section = sectionRef.value
+
+  if (!(section instanceof Element)) {
     return
   }
 
@@ -31,7 +33,7 @@ onMounted(() => {
     },
   )
 
-  observer.observe(sectionRef.value)
+  observer.observe(section)
 })
 
 onBeforeUnmount(() => {
@@ -58,8 +60,8 @@ onBeforeUnmount(() => {
 
       <div class="experience-section__content">
         <p class="experience-section__intro">
-          Hands-on full-stack experience developing production features,
-          admin workflows and reliable REST API integrations.
+          Hands-on experience as a Full Stack Developer building production
+          features, admin workflows and reliable REST APIs.
         </p>
 
         <div class="experience-list">

@@ -10,7 +10,9 @@ const education = portfolioData.education
 let observer: IntersectionObserver | null = null
 
 onMounted(() => {
-  if (!sectionRef.value) {
+  const section = sectionRef.value
+
+  if (!(section instanceof Element)) {
     return
   }
 
@@ -31,7 +33,7 @@ onMounted(() => {
     },
   )
 
-  observer.observe(sectionRef.value)
+  observer.observe(section)
 })
 
 onBeforeUnmount(() => {
@@ -58,7 +60,7 @@ onBeforeUnmount(() => {
 
       <article class="education-block">
         <div class="education-block__main">
-          <p class="education-block__degree">{{ education.degree }}</p>
+          <h3 class="education-block__degree">{{ education.degree }}</h3>
           <p class="education-block__field">{{ education.field }}</p>
         </div>
 

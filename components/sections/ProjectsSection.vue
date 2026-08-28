@@ -10,7 +10,9 @@ const isVisible = ref(false)
 let observer: IntersectionObserver | null = null
 
 onMounted(() => {
-  if (!sectionRef.value) {
+  const section = sectionRef.value
+
+  if (!(section instanceof Element)) {
     return
   }
 
@@ -31,7 +33,7 @@ onMounted(() => {
     },
   )
 
-  observer.observe(sectionRef.value)
+  observer.observe(section)
 })
 
 onBeforeUnmount(() => {
@@ -58,8 +60,8 @@ onBeforeUnmount(() => {
 
       <div class="projects-section__intro-block">
         <p class="projects-section__intro">
-          Selected full-stack and frontend projects focused on real application
-          flows, API integration and reliable user experiences.
+          Selected Vue 3, React and full-stack projects focused on real
+          application flows, REST APIs and reliable user experiences.
         </p>
 
         <nav class="project-index" aria-label="Featured projects">

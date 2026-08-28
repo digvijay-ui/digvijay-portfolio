@@ -3,13 +3,13 @@ import type { PortfolioData } from '~/types/portfolio'
 export const portfolioData: PortfolioData = {
   name: 'Digvijaysinh Rajput',
   role: 'Full Stack Developer',
-  location: 'Bangalore, Karnataka, India',
+  location: 'Bengaluru, Karnataka, India',
   email: 'rajputdigvijaysinh45@gmail.com',
   about: {
     heading: 'Building reliable web experiences.',
     paragraphs: [
-      'I’m Digvijaysinh Rajput, a Full Stack Developer and 2026 B.E. Information Technology graduate. I currently work as a Full Stack Developer Intern at Brainzym Private Ltd, where I build and maintain production web applications using Vue.js, TypeScript, Node.js, Express and PostgreSQL.',
-      'I enjoy developing responsive interfaces, REST APIs and reliable full-stack features. I am currently seeking Full Stack or Frontend Developer opportunities in Bangalore.',
+      'I’m Digvijaysinh Rajput, a Full Stack Developer in Bengaluru and a 2026 B.E. Information Technology graduate. At Brainzym Private Ltd, I build and maintain production web applications using Vue.js, TypeScript, Node.js, Express.js and PostgreSQL.',
+      'I enjoy developing responsive Vue.js and React interfaces, REST APIs and reliable full-stack features. I am currently seeking Full Stack Developer or Frontend Developer roles in Bengaluru.',
     ],
   },
   navigation: [
@@ -28,7 +28,7 @@ export const portfolioData: PortfolioData = {
     {
       id: 'location',
       label: 'Location',
-      value: 'Bangalore, India',
+      value: 'Bengaluru, India',
     },
     {
       id: 'education',
@@ -49,7 +49,7 @@ export const portfolioData: PortfolioData = {
       logo: '/images/companies/brainzym-logo.png',
       logoAlt: 'Brainzym Private Ltd logo',
       initials: 'BZ',
-      location: 'Bangalore, Karnataka',
+      location: 'Bengaluru, Karnataka',
       startDate: '2026-01',
       endDate: 'Present',
       period: 'Jan 2026 – Present',
@@ -68,11 +68,11 @@ export const portfolioData: PortfolioData = {
       ],
       achievements: [
         // TODO(digvijay): Add the number of production features or modules shipped at Brainzym.
-        "Developed and maintained full-stack features for Brainzym's core web platform using Vue.js, TypeScript, Node.js, Express and PostgreSQL.",
+        "Developed and maintained full-stack features for Brainzym's core web platform using Vue.js, TypeScript, Node.js, Express.js and PostgreSQL.",
         // TODO(digvijay): Add the number of reusable admin dashboard components if you have it.
-        'Took ownership of the admin dashboard module, building reusable Vue components with form handling, Zod validation, API error handling and production-focused testing.',
+        'Took ownership of the admin dashboard module, building reusable Vue.js components with form handling, Zod validation, API error handling and production-focused testing.',
         // TODO(digvijay): Add the CSV import scale, such as row count or student records processed.
-        'Designed and implemented a passcode-based student login flow covering Express API endpoints, PostgreSQL schema changes and bulk CSV imports.',
+        'Designed and implemented a passcode-based student login flow covering Express.js REST API endpoints, PostgreSQL schema changes and bulk CSV imports.',
         // TODO(digvijay): Add bug count, stability percentage or response-time improvement if tracked.
         'Troubleshot and improved existing frontend and backend modules, resolving bugs and improving application stability.',
         // TODO(digvijay): Add team size or sprint cadence if you want this quantified.
@@ -88,7 +88,7 @@ export const portfolioData: PortfolioData = {
       subtitle: 'Concurrency-safe full-stack event booking system',
       role: 'Full Stack Development',
       description:
-        'A full-stack event booking platform with authentication, event browsing, seat reservation, wallet-based payments, booking history and a role-based admin panel.',
+        'A Vue 3 and TypeScript booking platform with Node.js, Express and MongoDB, supporting event discovery, seat reservations, wallet payments and admin workflows.',
       impact:
         'Concurrency-safe seat reservation flow designed to reduce double-booking risk.',
       highlights: [
@@ -113,7 +113,7 @@ export const portfolioData: PortfolioData = {
       ],
       image: '/images/projects/ticket-booking.png',
       imageAlt:
-        'Ticket Booking Platform application interface showing the deployed booking experience',
+        'Screenshot of the Ticket Booking Platform showing the event booking and seat reservation interface',
       githubUrl: 'https://github.com/digvijay-ui/Ticket-Booking',
       liveUrl: 'https://frontend-five-bice-35.vercel.app/',
     },
@@ -124,7 +124,7 @@ export const portfolioData: PortfolioData = {
       subtitle: 'E-Waste Management Platform',
       role: 'Frontend Development',
       description:
-        'A responsive e-waste management platform connecting users with collection agents while supporting pickup scheduling, education, rewards and administrative workflows.',
+        'A React and TypeScript e-waste platform using Axios and Mapbox to help users schedule pickups, track locations and connect with collection agents.',
       impact:
         'Mapbox-powered pickup flow connects users and collection agents through location-aware UI.',
       highlights: [
@@ -139,7 +139,7 @@ export const portfolioData: PortfolioData = {
       technologies: ['React', 'TypeScript', 'React Router', 'Axios', 'Mapbox'],
       image: '/images/projects/digital-dump.png',
       imageAlt:
-        'Digital Dump e-waste management platform deployed application interface',
+        'Screenshot of the Digital Dump platform showing the e-waste pickup and location-based user interface',
       githubUrl: 'https://github.com/digvijay-ui/Digital-Dump',
       liveUrl: 'https://digital-dump-f.vercel.app/',
     },
@@ -217,9 +217,9 @@ export const portfolioData: PortfolioData = {
   contact: {
     heading: "Let's build something.",
     description:
-      'Have a Full Stack or Frontend role in Bangalore? Send me a message and I’ll get back quickly.',
+      'Have a Full Stack Developer or Frontend Developer opening in Bengaluru? Send me a message and I’ll get back quickly.',
     email: 'rajputdigvijaysinh45@gmail.com',
-    location: 'Bangalore, Karnataka, India',
+    location: 'Bengaluru, Karnataka, India',
   },
   socialLinks: [
     {

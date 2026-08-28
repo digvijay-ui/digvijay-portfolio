@@ -36,13 +36,19 @@
         target="_blank"
         rel="noopener noreferrer"
         class="hero-mobile-link"
+        aria-label="Open Digvijaysinh Rajput's GitHub profile in a new tab"
       >
         GitHub ↗
       </a>
     </div>
 
     <div class="hero-actions">
-      <a href="/resume.pdf" download class="hero-cta hero-cta--secondary">
+      <a
+        href="/resume.pdf"
+        download
+        class="hero-cta hero-cta--secondary"
+        aria-label="Download Digvijaysinh Rajput's resume PDF"
+      >
         <svg
           class="hero-cta__icon"
           viewBox="0 0 24 24"

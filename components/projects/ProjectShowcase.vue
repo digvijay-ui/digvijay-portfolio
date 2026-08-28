@@ -66,6 +66,7 @@ const isRightAligned = Number(props.project.number) % 2 === 0
           target="_blank"
           rel="noopener noreferrer"
           class="project-showcase__button project-showcase__button--primary"
+          :aria-label="`Open live ${project.title} project in a new tab`"
         >
           Live Project ↗
         </a>
@@ -74,6 +75,7 @@ const isRightAligned = Number(props.project.number) % 2 === 0
           target="_blank"
           rel="noopener noreferrer"
           class="project-showcase__button project-showcase__button--secondary"
+          :aria-label="`Open ${project.title} GitHub repository in a new tab`"
         >
           View GitHub ↗
         </a>

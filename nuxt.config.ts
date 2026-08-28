@@ -7,6 +7,9 @@ export default defineNuxtConfig({
   experimental: {
     appManifest: false,
   },
+  features: {
+    inlineStyles: false,
+  },
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/sitemap', '@nuxtjs/robots'],
   css: ['~/assets/css/main.css'],
   site: {

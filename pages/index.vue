@@ -72,6 +72,20 @@ useHead({
       href: homepageUrl,
     },
   ],
+  meta: [
+    {
+      property: 'og:image:secure_url',
+      content: socialImageUrl,
+    },
+    {
+      property: 'og:image:url',
+      content: socialImageUrl,
+    },
+    {
+      name: 'twitter:image:src',
+      content: socialImageUrl,
+    },
+  ],
   script: [
     {
       key: 'person-schema',

@@ -1,4 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="D">
-  <rect width="64" height="64" rx="10" fill="#000000"/>
-  <text x="32" y="43" text-anchor="middle" fill="#b6ff4a" font-family="Arial, sans-serif" font-size="36" font-weight="700">D</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Digvijaysinh Rajput</title>
+  <desc id="desc">A minimal full stack developer mark with angled code brackets and a lime slash.</desc>
+  <rect width="64" height="64" rx="14" fill="#050805"/>
+  <rect x="1" y="1" width="62" height="62" rx="13" fill="none" stroke="#233025" stroke-width="2"/>
+  <path d="M25 20 15 32 25 44" fill="none" stroke="#f7ffe8" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M39 20 49 32 39 44" fill="none" stroke="#f7ffe8" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M36.5 15 27.5 49" fill="none" stroke="#b6ff4a" stroke-width="5.5" stroke-linecap="round"/>
+  <rect x="47" y="47" width="5" height="5" rx="1.25" fill="#b6ff4a"/>
 </svg>

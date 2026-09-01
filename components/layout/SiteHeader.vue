@@ -337,4 +337,40 @@ watch(isMenuOpen, () => {
     transition: none;
   }
 }
+
+@media (max-width: 900px) and (scripting: none) {
+  .site-header {
+    justify-content: center;
+    pointer-events: auto;
+  }
+
+  .site-header__toggle,
+  .site-header__backdrop {
+    display: none;
+  }
+
+  .site-header__nav {
+    position: static;
+    display: flex;
+    width: min(100%, var(--content-width));
+    min-height: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 1px solid rgba(161, 161, 170, 0.22);
+    border-radius: 999px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.36);
+    padding: 6px;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+    visibility: visible;
+  }
+
+  .site-header__link {
+    width: auto;
+    min-height: 34px;
+    border-radius: 999px;
+    padding: 10px 13px;
+  }
+}
 </style>

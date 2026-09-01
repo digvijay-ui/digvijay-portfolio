@@ -52,7 +52,7 @@ onBeforeUnmount(() => {
       <div class="about-section__heading">
         <SectionHeading
           number="01"
-          label="// About"
+          label="About"
           :title="portfolioData.about.heading"
         />
       </div>

@@ -6,7 +6,7 @@ export const portfolioData: PortfolioData = {
   location: 'Bengaluru, Karnataka, India',
   email: 'rajputdigvijaysinh45@gmail.com',
   about: {
-    heading: 'Building reliable web experiences.',
+    heading: 'Engineering reliable web experiences.',
     paragraphs: [
       'I’m Digvijaysinh Rajput, a Full Stack Developer in Bengaluru and a 2026 B.E. Information Technology graduate. At Brainzym Private Ltd, I build and maintain production web applications using Vue.js, TypeScript, Node.js, Express.js and PostgreSQL.',
       'I enjoy developing responsive Vue.js and React interfaces, REST APIs and reliable full-stack features. I am currently seeking Full Stack Developer or Frontend Developer roles in Bengaluru.',

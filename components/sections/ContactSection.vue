@@ -57,7 +57,7 @@ onBeforeUnmount(() => {
           <span>Contact</span>
         </p>
 
-        <p class="contact-section__command">ready-to-build? --say-hello</p>
+        <p class="contact-section__command"></p>
       </div>
 
       <div class="contact-section__content">

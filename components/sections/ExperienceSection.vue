@@ -54,7 +54,7 @@ onBeforeUnmount(() => {
         <SectionHeading
           number="02"
           label="Experience"
-          title="Building and shipping production software."
+          title=""
         />
       </div>
 

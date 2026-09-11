@@ -4,6 +4,7 @@ import ContactSection from '~/components/sections/ContactSection.vue'
 import EducationSection from '~/components/sections/EducationSection.vue'
 import ExperienceSection from '~/components/sections/ExperienceSection.vue'
 import HeroSection from '~/components/sections/HeroSection.vue'
+import PortfolioMascot from '~/components/PortfolioMascot.vue'
 import SiteFooter from '~/components/layout/SiteFooter.vue'
 import SiteHeader from '~/components/layout/SiteHeader.vue'
 import ProjectsSection from '~/components/sections/ProjectsSection.vue'
@@ -115,5 +116,6 @@ useHead({
     <ContactSection />
   </main>
 
+  <PortfolioMascot />
   <SiteFooter />
 </template>

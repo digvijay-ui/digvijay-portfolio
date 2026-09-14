@@ -1,5 +1,10 @@
+<script setup lang="ts">
+import FooterName from './FooterName.vue'
+</script>
+
 <template>
   <footer class="site-footer">
+    <FooterName />
     <div class="site-footer__inner">
       <p>© 2026 Digvijaysinh Rajput</p>
 

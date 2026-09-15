@@ -8,7 +8,7 @@ import FooterName from './FooterName.vue'
     <div class="site-footer__inner">
       <p>© 2026 Digvijaysinh Rajput</p>
 
-      <p aria-hidden="true"></p>
+      <p>Thoughtfully built. Down to the details.</p>
 
       <a href="#home">Back to top ↑</a>
     </div>
@@ -19,7 +19,7 @@ import FooterName from './FooterName.vue'
 .site-footer {
   border-top: 1px solid var(--color-border);
   background: var(--color-page);
-  padding: 28px 24px;
+  padding: 28px var(--page-gutter);
 }
 
 .site-footer__inner {
@@ -66,7 +66,7 @@ import FooterName from './FooterName.vue'
 
 @media (max-width: 767px) {
   .site-footer {
-    padding: 28px 20px;
+    padding: 28px var(--page-gutter);
   }
 
   .site-footer__inner {

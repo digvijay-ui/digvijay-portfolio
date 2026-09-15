@@ -144,7 +144,7 @@ onBeforeUnmount(() => dispose())
 
 <style scoped>
 .footer-signature {
-  --signature-green: #39ff6a;
+  --signature-green: var(--color-accent);
   container-type: inline-size;
   width: 100%;
   margin: 0 auto clamp(24px, 4vw, 64px);
@@ -181,7 +181,7 @@ onBeforeUnmount(() => dispose())
   padding: 0 0.025em 0.13em 0;
   font-family: var(--font-display);
   font-size: 22vw;
-  font-size: 23cqw;
+  font-size: 21cqw;
   font-weight: 700;
   line-height: 0.9;
   letter-spacing: -0.055em;
@@ -212,12 +212,12 @@ onBeforeUnmount(() => dispose())
   color: var(--signature-green);
   opacity: var(--letter-activation, 0);
   /* The glow is rasterized with its glyph; only the layer's opacity changes. */
-  text-shadow: 0 0 18px rgb(57 255 106 / 25%);
+
 }
 
 .footer-name__ghost {
   color: transparent;
-  -webkit-text-stroke: 1px rgb(57 255 106 / 22%);
+  -webkit-text-stroke: 0;
   transform: translate(0.008em, 0.025em);
 }
 

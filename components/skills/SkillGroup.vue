@@ -23,37 +23,3 @@ defineProps<SkillGroupProps>()
     </ul>
   </section>
 </template>
-
-<style scoped>
-.skill-group {
-  display: grid;
-  gap: 12px;
-}
-
-.skill-group__title {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin: 0;
-  color: var(--color-text-muted);
-  font-family: var(--font-mono);
-  font-size: 0.8125rem;
-  font-weight: 600;
-  letter-spacing: 0;
-  line-height: 1.4;
-  text-transform: uppercase;
-}
-
-.skill-group__title span {
-  color: var(--color-accent);
-}
-
-.skill-group__list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-</style>

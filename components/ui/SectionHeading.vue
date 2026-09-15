@@ -32,38 +32,3 @@ const headingId = computed(() => {
     </h2>
   </div>
 </template>
-
-<style scoped>
-.section-heading {
-  display: grid;
-  gap: 18px;
-}
-
-.section-heading__meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin: 0;
-  font-family: var(--font-mono);
-  font-size: 0.875rem;
-  line-height: 1.4;
-}
-
-.section-heading__number {
-  color: var(--color-accent);
-}
-
-.section-heading__label {
-  color: var(--color-text-muted);
-}
-
-.section-heading__title {
-  max-width: 12ch;
-  margin: 0;
-  color: var(--color-text-primary);
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 700;
-  line-height: 1.1;
-}
-</style>

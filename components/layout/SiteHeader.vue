@@ -3,11 +3,8 @@ import { onBeforeUnmount, onMounted, ref, watch } from 'vue'
 
 const navItems = [
   { label: 'About', href: '#about', id: 'about' },
-  { label: 'Experience', href: '#experience', id: 'experience' },
-  { label: 'Projects', href: '#projects', id: 'projects' },
-  { label: 'Skills', href: '#skills', id: 'skills' },
-  { label: 'Education', href: '#education', id: 'education' },
-  { label: 'Contact', href: '#contact', id: 'contact' },
+  { label: 'Work', href: '#projects', id: 'projects' },
+  { label: 'Resume', href: '/resume.pdf', id: 'resume' },
 ]
 
 const activeSection = ref('home')
@@ -46,7 +43,7 @@ const handleKeydown = (event: KeyboardEvent) => {
     if (wasOpen) headerElement.value?.querySelector<HTMLButtonElement>('.site-header__toggle')?.focus()
   }
   if (event.key === 'Tab' && isMenuOpen.value) {
-    const controls = Array.from(headerElement.value?.querySelectorAll<HTMLElement>('.site-header__toggle, .site-header__link') || [])
+    const controls = Array.from(headerElement.value?.querySelectorAll<HTMLElement>('.site-header__toggle, .site-header__link, .site-header__contact') || [])
     const first = controls[0]
     const last = controls[controls.length - 1]
     if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus() }
@@ -110,7 +107,7 @@ watch(isMenuOpen, () => {
 
 <template>
   <header ref="headerElement" class="site-header">
-    <a class="site-header__brand" href="#home" aria-label="Digvijaysinh Rajput, home" @click="closeMenu">d<span>.</span><span class="brand-caption">DIGVIJAY<br>RAJPUT</span></a>
+    <a class="site-header__brand" href="#home" aria-label="Digvijaysinh Rajput, home" @click="closeMenu">DIGVIJAY<span>*</span></a>
     <button
       class="site-header__backdrop"
       :class="{ 'site-header__backdrop--open': isMenuOpen }"
@@ -150,6 +147,7 @@ watch(isMenuOpen, () => {
       >
         {{ item.label }}
       </a>
+      <a href="#contact" class="site-header__contact" @click="closeMenu">Contact me <span aria-hidden="true">→</span></a>
     </nav>
   </header>
 </template>

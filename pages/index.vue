@@ -101,7 +101,6 @@ useHead({
 
 <template>
   <a href="#main-content" class="skip-link">Skip to content</a>
-  <div class="intro-rule" aria-hidden="true"><span /></div>
   <SiteHeader />
 
   <main id="main-content" tabindex="-1">

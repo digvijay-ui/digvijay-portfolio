@@ -137,7 +137,6 @@ onBeforeUnmount(() => dispose())
           </span>
         </span>
       </h2>
-      <div class="footer-name__rule" aria-hidden="true"><span /></div>
     </div>
   </div>
 </template>
@@ -158,7 +157,7 @@ onBeforeUnmount(() => dispose())
   gap: 8px 20px;
   padding-top: clamp(8px, 1.5vw, 24px);
   font-family: var(--font-mono);
-  font-size: clamp(0.5625rem, 0.8vw, 0.6875rem);
+  font-size: clamp(0.6875rem, 0.8vw, 0.75rem);
   line-height: 1.5;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -221,42 +220,13 @@ onBeforeUnmount(() => dispose())
   transform: translate(0.008em, 0.025em);
 }
 
-.footer-name__rule {
-  position: relative;
-  height: 1px;
-  margin-top: clamp(10px, 1.5vw, 24px);
-  background: rgb(255 255 255 / 16%);
-}
-
-.footer-name__rule > span {
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: clamp(24px, 4vw, 64px);
-  background: var(--signature-green);
-  opacity: 0.65;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .footer-name__rule > span {
-    animation: signature-idle 7s ease-in-out infinite;
-    animation-play-state: paused;
-  }
-
-  .footer-name[data-ambient="true"] .footer-name__rule > span {
-    animation-play-state: running;
-  }
-}
-
 @media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
   .footer-name[data-ambient="true"] .footer-name__green {
     will-change: opacity;
   }
 }
 
-@keyframes signature-idle {
-  0%, 100% { opacity: 0.45; transform: translateX(0); }
-  50% { opacity: 0.8; transform: translateX(8px); }
-}
+
 
 @media (prefers-reduced-motion: reduce) {
   .footer-name__face { transform: none; }

@@ -31,7 +31,6 @@ import ExperienceCard from '~/components/experience/ExperienceCard.vue'
             :key="experience.id"
             class="experience-list__item"
           >
-            <span class="experience-list__marker" aria-hidden="true" />
             <ExperienceCard :experience="experience" />
           </div>
         </div>

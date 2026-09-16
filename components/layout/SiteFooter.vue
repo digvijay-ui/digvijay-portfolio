@@ -17,7 +17,6 @@ import FooterName from './FooterName.vue'
 
 <style scoped>
 .site-footer {
-  border-top: 1px solid var(--color-border);
   background: var(--color-page);
   padding: 28px var(--page-gutter);
 }

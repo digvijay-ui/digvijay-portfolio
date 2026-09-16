@@ -4,7 +4,7 @@
 
 An editorial developer portfolio: confident typography, asymmetric composition, real project imagery, clear technical contributions and quiet personal details. Black, warm white and neon green remain the identity. The opening uses a personal statement instead of a poster labelled “PORTFOLIO”.
 
-The reference, https://akritipurbey.framer.website/, informed the hierarchy, personal tone, image-led work and recruiter Q&A. Its layouts, assets and copy are not reproduced. The developer fragment is built from HTML/CSS; the existing mascot appears only as a small supporting detail inside it.
+The reference, https://akritipurbey.framer.website/, informed the hierarchy, personal tone, image-led work and recruiter Q&A. Its layouts, assets and copy are not reproduced. The hero now follows the composition of https://akashux.framer.website/ with original night artwork; see the hero specification below.
 
 ## Stack and content
 
@@ -25,14 +25,14 @@ Defined in `assets/css/main.css`.
 | `--color-text-muted` | `#969c91` | Readable metadata |
 | `--color-accent` | `#b6ff4a` | Neon green, actions and selective emphasis |
 
-Use green on key actions, status, section numbers and hover feedback. No glow, glass panels or decorative color gradients. The developer fragment uses a faint 22px grid; project surrounds use solid muted green and pale neutral tones. Hairlines and spacing establish hierarchy instead of repeated cards.
+Use green on key actions, status, section numbers and hover feedback. Below the hero, keep solid surfaces and restrained accents. The hero alone uses blurred navigation, atmospheric shading and a subtle terminal glow. The developer fragment uses a faint 22px grid; project surrounds use solid muted green and pale neutral tones. Spacing establishes hierarchy; decorative section and row dividers have been removed.
 
 ## Typography
 
-- **Space Grotesk 600/700:** headings, signature and project numbers. Tight tracking, approximately −0.055em; hero −0.065em.
+- **Space Grotesk 600/700:** headings, signature and project numbers. Tight tracking, approximately −0.035em for shared headings.
 - **Inter 400/500:** readable body and controls, generally 14–20px with 1.55–1.75 line height.
 - **JetBrains Mono:** restrained labels, technology tags and technical metadata, approximately 10–12px.
-- **Georgia italic:** one word, “feel”, in the hero, giving a human counterpoint to technical typography.
+- **Georgia regular/italic:** editorial hero statement; the role is italic neon green.
 - Hero: fluid 46–96px desktop, 39–66px mobile. H2: 36–60px. Project H3: 24–48px.
 - Existing Google Fonts stylesheet uses `display=swap`; fallbacks remain usable.
 
@@ -40,10 +40,10 @@ Use green on key actions, status, section numbers and hover feedback. No glow, g
 
 Content width: 1320px. Gutters: `clamp(22px, 5vw, 88px)`. Section spacing: `clamp(80px, 10vw, 150px)`.
 
-1. **Header:** compact name mark on the left and six existing navigation destinations on the right. Mobile menu at 760px and below, with Escape dismissal, focus cycling and scroll locking.
-2. **Hero:** slim metadata rule, personal name, four-line statement and an offset developer note. Role, location and availability come from the existing biography. Main actions retain the original explore anchor, resume download and GitHub destination.
+1. **Header:** floating sticky off-white rounded bar, DIGVIJAY* brand, About/Work/Resume links and a dark Contact me button. Mobile menu at 760px and below retains Escape dismissal, focus cycling and scroll locking.
+2. **Hero:** full-viewport night environment, upper-left serif statement and supporting copy, original lower-right terminal laptop and centered scroll anchor. See the hero specification below.
 3. **About:** asymmetric heading and editorial biography, followed by two-column quick facts.
-4. **Experience:** a muted section with a continuous timeline rule, current role marker, company identity, dates, technologies and all existing achievements.
+4. **Experience:** a muted section with open spacing, company identity, dates, technologies and all existing achievements.
 5. **Projects:** large numbered case studies. Each has a real screenshot in a browser-like frame, original description and impact, contribution list, technologies and live/GitHub actions. Alternating solid image surrounds establish rhythm.
 6. **Skills:** category filters and structured rows, sourced from the existing skill groups. The default shows every category. Filters use native buttons and `aria-pressed`.
 7. **Education:** compact academic record, preserving institution, location, period and CGPA.
@@ -57,7 +57,7 @@ At 1050px, supporting columns tighten and skills become a single column. At 760p
 
 `composables/usePortfolioMotion.ts` provides optional enhancements, cleaned up on unmount and reconfigured when the motion preference changes.
 
-- Nonblocking intro: a 2px green rule, 1 second, with no forced loading screen.
+- Hero intro: a short optional black/green letter sequence, once per browser tab; skipped for reduced motion. No decorative intro rule.
 - Hero masking: 900ms entrance, 100ms line offsets, using transforms inside overflow masks.
 - Section reveals: 22px vertical offset, 700ms, triggered once by IntersectionObserver. Content is visible before JavaScript; only offscreen targets are hidden after enhancement initializes. Keyboard focus reveals a pending target immediately.
 - Single-page transitions: native smooth anchor scrolling and section entrances; there are no additional page routes to animate.
@@ -95,3 +95,20 @@ The legacy design document at `docs/design (2).md` points to this finalized syst
 - Verified skill filtering, native FAQ keyboard behavior, mobile navigation and focus cycling, anchor targets, heading associations and resume response.
 - Verified no-JavaScript navigation/FAQ, reduced-motion rendering, live preference changes, magnetic controls and footer letter proximity.
 - Existing package/lock files, Nuxt configuration, portfolio data, types and deployment configuration are unchanged.
+
+
+## Night hero — September 2026
+
+Scope: hero and its requested shared navigation only. All below-fold content, section colors, data, SEO and project imagery are retained. Earlier validation above describes the previous design, not this revision.
+
+- `assets/css/hero.css` owns the hero and navbar overrides. Shared accent remains `#b6ff4a`; hero-local `--hero-green` is `#39FF6A`. Canvas is black/deep charcoal with dark forest greens and white copy. Navbar uses a slightly transparent off-white surface with backdrop blur, dark controls and a darker green focus outline for contrast.
+- `HeroWorld.vue` is an original inline SVG pixel illustration: deterministic stars, faint dot grid, moon, distant city, stepped forest silhouettes, cedar canopy, textured ground, laptop terminal, keyboard, mug and notebook. No copied reference artwork, image downloads, canvas loop or additional dependencies. Decorative artwork is hidden from assistive technology.
+- Hero uses `100svh`, with minimum height only for short screens to preserve readable content. Georgia is reused for 38–72px desktop serif type, 31–49px mobile; role italic green. Inter supporting copy is 14–17px. Exact user-provided introduction and product description are retained.
+- Navbar sticks 18px from the top (12px mobile), within a 960px rounded surface. About targets `#about`, Work targets `#projects`, Resume opens the existing PDF, Contact targets `#contact`. Mobile navigation keeps the existing keyboard and dismissal behavior.
+- Intro shows FULL STACK DEVELOPER, then staggered DIGVIJAY letters, revealing the hero after 1.9 seconds. It does not block input, takes no keyboard focus, and is skipped on subsequent visits in the same tab. Core server-rendered content is always available. Reduced motion removes the intro immediately, including live preference changes.
+- Existing CSS/Vue motion handles 900ms staggered copy entrances, navigation entrance, restrained 12px/8px pointer depth, a slow terminal glow and a blinking cursor. Parallax is event-driven, frame-throttled, fine-mouse only and cleaned up on unmount. Mobile simplifies the composition and masks background detail behind text. No decorative section lines are reintroduced.
+- Implementation: `HeroSection.vue`, `HeroWorld.vue`, `SiteHeader.vue`, `assets/css/hero.css`, and the CSS registration in `nuxt.config.ts`.
+
+### Revision validation
+
+Type checking passed. Chrome visual and overflow checks passed at 1440×900, 1024×768, 768×1024, 390×844 and 320×740. Portrait tablet framing and 320px copy/illustration clearance were adjusted after visual inspection. No browser page errors. Verified mobile menu visibility, Tab cycling through Contact back to the toggle, Escape focus restoration, sticky 12px mobile positioning, initial/live reduced-motion behavior, and usable no-JavaScript mobile navigation without overflow. Production build passed.

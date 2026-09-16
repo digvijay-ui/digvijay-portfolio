@@ -1,33 +1,65 @@
 <script setup lang="ts">
-import { portfolioData } from '~/data/portfolio'
-import PortfolioMascot from '~/components/PortfolioMascot.vue'
+import { onBeforeUnmount, onMounted, ref } from 'vue'
+import HeroWorld from './HeroWorld.vue'
+
+const hero = ref<HTMLElement | null>(null)
+const loading = ref(false)
+const entered = ref(false)
+let dispose = () => {}
+onMounted(() => {
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)')
+  const fine = window.matchMedia('(hover: hover) and (pointer: fine)')
+  let frame = 0
+  let timer: ReturnType<typeof setTimeout> | undefined
+  const finish = () => { loading.value = false; entered.value = true }
+  if (!reduced.matches && !sessionStorage.getItem('night-hero-intro')) {
+    loading.value = true
+    sessionStorage.setItem('night-hero-intro', '1')
+    timer = setTimeout(finish, 1900)
+  } else finish()
+  const reset = () => {
+    if (frame) cancelAnimationFrame(frame)
+    frame = 0
+    hero.value?.style.setProperty('--world-x', '0px')
+    hero.value?.style.setProperty('--world-y', '0px')
+    if (reduced.matches) { clearTimeout(timer); finish() }
+  }
+  const move = (event: PointerEvent) => {
+    if (reduced.matches || !fine.matches || event.pointerType !== 'mouse' || frame) return
+    const rect = hero.value!.getBoundingClientRect()
+    frame = requestAnimationFrame(() => {
+      hero.value?.style.setProperty('--world-x', `${(event.clientX / rect.width - .5) * 12}px`)
+      hero.value?.style.setProperty('--world-y', `${((event.clientY - rect.top) / rect.height - .5) * 8}px`)
+      frame = 0
+    })
+  }
+  hero.value?.addEventListener('pointermove', move, { passive: true })
+  hero.value?.addEventListener('pointerleave', reset)
+  reduced.addEventListener('change', reset)
+  fine.addEventListener('change', reset)
+  dispose = () => { clearTimeout(timer); reset(); hero.value?.removeEventListener('pointermove', move); hero.value?.removeEventListener('pointerleave', reset); reduced.removeEventListener('change', reset); fine.removeEventListener('change', reset) }
+})
+onBeforeUnmount(() => dispose())
 </script>
 
 <template>
-  <section id="home" class="hero-section" aria-labelledby="hero-title">
-    <div class="hero-meta mono"><span>Developer / Portfolio ’26</span><span class="availability"><i /> Open to opportunities</span></div>
-    <div class="hero-composition">
-      <div class="hero-statement">
-        <p class="hero-name">{{ portfolioData.name }} <span>↘</span></p>
-        <h1 id="hero-title"><span class="text-mask"><span>I build digital</span></span><span class="text-mask"><span>experiences</span></span><span class="text-mask"><span>that <em>feel</em> as good</span></span><span class="text-mask"><span>as they work<span class="green">.</span></span></span></h1>
-      </div>
-      <aside class="hero-note" aria-label="Developer profile">
-        <div class="dev-fragment" aria-hidden="true">
-          <div class="fragment-top mono"><span>interface.ts</span><span>↗</span></div>
-          <div class="fragment-symbol">&lt;<span>/</span>&gt;</div>
-          <div class="fragment-code mono"><span>01</span> thoughtful interfaces<br><span>02</span> reliable systems<br><span>03</span> details that matter</div>
-          <div class="fragment-bottom"><span class="mono">Design → Code → Ship</span><PortfolioMascot /></div>
-        </div>
-        <p class="hero-role">{{ portfolioData.role }}</p>
-        <p class="hero-location">{{ portfolioData.location }}</p>
-        <p class="hero-stack mono">Vue · React · TypeScript · Node.js</p>
-      </aside>
+  <section id="home" ref="hero" class="night-hero" :class="{ 'night-hero--entered': entered }" aria-labelledby="hero-title">
+    <div v-if="loading" class="hero-loader" aria-hidden="true">
+      <p>FULL STACK DEVELOPER</p>
+      <div><span v-for="(letter, i) in 'DIGVIJAY'" :key="i" :style="{ '--letter-delay': `${350 + i * 110}ms` }">{{ letter }}</span></div>
     </div>
-    <div class="hero-bottom">
-      <a href="#about" class="button button--primary" data-magnetic>Explore portfolio <span aria-hidden="true">↘</span></a>
-      <a href="/resume.pdf" download class="text-link" data-magnetic>Download Resume <span aria-hidden="true">↓</span></a>
-      <a :href="portfolioData.socialLinks[0].href" target="_blank" rel="noopener noreferrer" class="hero-github text-link" aria-label="Open Digvijaysinh Rajput's GitHub profile in a new tab">GitHub ↗</a>
-      <span class="hero-scroll mono">Scroll to explore ↓</span>
+    <HeroWorld />
+    <div class="night-hero__shade" aria-hidden="true" />
+    <div class="night-hero__copy">
+      <p class="night-hero__eyebrow mono hero-enter"></p>
+      <h1 id="hero-title">
+        <span class="hero-enter">I am Digvijaysinh Rajput</span>
+        <span class="hero-enter"><em>Full Stack Developer.</em></span>
+        <span class="hero-enter">Building products that scale.</span>
+      </h1>
+      <p class="night-hero__description hero-enter">I build responsive interfaces and reliable full-stack products using Vue, React, TypeScript, Node.js, and PostgreSQL—turning real business requirements into clean, scalable experiences.</p>
     </div>
+    <a class="night-hero__scroll" href="#about" aria-label="Scroll to About"><span aria-hidden="true">↓</span></a>
+    <span class="night-hero__caption mono" aria-hidden="true"></span>
   </section>
 </template>

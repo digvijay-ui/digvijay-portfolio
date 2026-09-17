@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { portfolioData } from '~/data/portfolio'
 import SectionHeading from '~/components/ui/SectionHeading.vue'
+import AnimatedStat from '~/components/ui/AnimatedStat.vue'
 </script>
 
 <template>
@@ -35,7 +36,7 @@ import SectionHeading from '~/components/ui/SectionHeading.vue'
             class="quick-fact"
           >
             <dt>{{ fact.label }}</dt>
-            <dd>{{ fact.value }}</dd>
+            <dd><AnimatedStat :value="fact.value" /></dd>
           </div>
         </dl>
       </div>

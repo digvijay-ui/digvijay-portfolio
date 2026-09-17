@@ -11,6 +11,8 @@ const grass = Array.from({ length: 380 }, (_, i) => ({ x: (i * 137) % 1440, y: 5
       <linearGradient id="night-sky" x2="0" y2="1"><stop stop-color="#050b0a"/><stop offset="1" stop-color="#142a20"/></linearGradient>
       <linearGradient id="night-ground" x2="0" y2="1"><stop stop-color="#153524"/><stop offset="1" stop-color="#06100c"/></linearGradient>
       <radialGradient id="terminal-light"><stop stop-color="#39ff6a" stop-opacity=".18"/><stop offset="1" stop-color="#39ff6a" stop-opacity="0"/></radialGradient>
+      <radialGradient id="cursor-light"><stop stop-color="#85ffa4" stop-opacity=".22"/><stop offset="1" stop-color="#39ff6a" stop-opacity="0"/></radialGradient>
+      <clipPath id="terminal-spotlight-clip"><rect x="820" y="430" width="420" height="360" rx="80"/></clipPath>
       <pattern id="night-grid" width="26" height="26" patternUnits="userSpaceOnUse"><rect width="1" height="1" fill="#9bceb0" opacity=".17"/></pattern>
       <pattern id="keyboard" width="24" height="13" patternUnits="userSpaceOnUse" patternTransform="skewX(-34)"><rect width="18" height="7" fill="#233b30"/></pattern>
       <g id="pine"><path d="M0 0h12v20h12v20h14v22h16v24h-40v34H-2V86h-38V62h14V40h14V20H0Z" fill="currentColor"/><path d="M0 20h12v20h12v22h14v12H4V55H-8V40H0Z" fill="#28503a" opacity=".35"/></g>
@@ -54,6 +56,7 @@ const grass = Array.from({ length: 380 }, (_, i) => ({ x: (i * 137) % 1440, y: 5
       <path d="M1188 756l91-22 69 14-88 30Z" fill="#4d5036"/><path d="M1188 756v12l72 23 88-31v-12l-88 30Z" fill="#232d1e"/><path d="M1210 754l55-14 51 10-54 18Z" fill="#67704d" opacity=".5"/>
       <path d="M844 650h29v42h-29Z" fill="#3e5140"/><path d="M873 657h10v23h-10" fill="none" stroke="#3e5140" stroke-width="5"/><path d="M850 636v-16m10 18v-25" stroke="#76987e" stroke-opacity=".3" stroke-width="2"/>
     </g>
+    <g clip-path="url(#terminal-spotlight-clip)"><circle class="terminal-spotlight" cx="1050" cy="600" r="180" fill="url(#cursor-light)" opacity="0"/></g>
     <g color="#0a2116"><use href="#pine" transform="translate(45 580) scale(2.5)"/><use href="#pine" transform="translate(1400 640) scale(2.8)"/></g>
     <path d="M0 865h80v-20h70v24h110v-12h90v43H0Zm1200 35v-40h65v-16h70v20h105v36Z" fill="#07140d"/>
   </svg>

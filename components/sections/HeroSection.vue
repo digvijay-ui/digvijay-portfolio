@@ -9,6 +9,8 @@ let dispose = () => {}
 onMounted(() => {
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)')
   const fine = window.matchMedia('(hover: hover) and (pointer: fine)')
+  const world = hero.value?.querySelector<SVGSVGElement>('.night-world')
+  const spotlight = hero.value?.querySelector<SVGCircleElement>('.terminal-spotlight')
   let frame = 0
   let timer: ReturnType<typeof setTimeout> | undefined
   const finish = () => { loading.value = false; entered.value = true }
@@ -20,6 +22,7 @@ onMounted(() => {
   const reset = () => {
     if (frame) cancelAnimationFrame(frame)
     frame = 0
+    spotlight?.setAttribute('opacity', '0')
     hero.value?.style.setProperty('--world-x', '0px')
     hero.value?.style.setProperty('--world-y', '0px')
     if (reduced.matches) { clearTimeout(timer); finish() }
@@ -30,14 +33,24 @@ onMounted(() => {
     frame = requestAnimationFrame(() => {
       hero.value?.style.setProperty('--world-x', `${(event.clientX / rect.width - .5) * 12}px`)
       hero.value?.style.setProperty('--world-y', `${((event.clientY - rect.top) / rect.height - .5) * 8}px`)
+      // Convert through the SVG matrix so the hotspot follows its responsive crop.
+      const matrix = world?.getScreenCTM()
+      if (matrix && spotlight) {
+        const point = new DOMPoint(event.clientX, event.clientY).matrixTransform(matrix.inverse())
+        spotlight.setAttribute('cx', String(point.x))
+        spotlight.setAttribute('cy', String(point.y))
+        spotlight.setAttribute('opacity', String(Math.max(0, 1 - Math.hypot(point.x - 1050, point.y - 600) / 360)))
+      }
       frame = 0
     })
   }
   hero.value?.addEventListener('pointermove', move, { passive: true })
   hero.value?.addEventListener('pointerleave', reset)
+  hero.value?.addEventListener('pointercancel', reset)
+  window.addEventListener('blur', reset)
   reduced.addEventListener('change', reset)
   fine.addEventListener('change', reset)
-  dispose = () => { clearTimeout(timer); reset(); hero.value?.removeEventListener('pointermove', move); hero.value?.removeEventListener('pointerleave', reset); reduced.removeEventListener('change', reset); fine.removeEventListener('change', reset) }
+  dispose = () => { clearTimeout(timer); reset(); hero.value?.removeEventListener('pointermove', move); hero.value?.removeEventListener('pointerleave', reset); hero.value?.removeEventListener('pointercancel', reset); window.removeEventListener('blur', reset); reduced.removeEventListener('change', reset); fine.removeEventListener('change', reset) }
 })
 onBeforeUnmount(() => dispose())
 </script>

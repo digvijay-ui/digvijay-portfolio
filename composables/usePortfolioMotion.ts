@@ -1,6 +1,6 @@
 import { onBeforeUnmount, onMounted } from 'vue'
 
-/** Optional enhancements: content is visible before JS and when motion is disabled. */
+/** Progressive enhancement: SSR and reduced-motion content stay visible. */
 export function usePortfolioMotion() {
   let dispose = () => {}
   onMounted(() => {
@@ -12,7 +12,20 @@ export function usePortfolioMotion() {
       if (reduced.matches) return
       const controller = new AbortController()
       const options = { passive: true, signal: controller.signal }
-      const targets = Array.from(document.querySelectorAll<HTMLElement>('main section > div > .section-heading, main [class$="__heading"], .about-section__content, .experience-section__content, .education-block, .contact-section__content, .project-showcase__header, .project-showcase__media, .project-showcase__body, .faq-list, .skills-section__content'))
+      const targets: HTMLElement[] = []
+      // Reveal small groups independently, including long project sections.
+      document.querySelectorAll<HTMLElement>('main > section:not(.night-hero)').forEach(section => {
+        const groups = section.querySelectorAll<HTMLElement>('[class$="__inner"], [class$="__content"], .experience-list, .projects-section__list, .project-showcase, .faq-list')
+        groups.forEach(group => {
+          const children = Array.from(group.children).filter((child): child is HTMLElement => child instanceof HTMLElement)
+          children.forEach((child, index) => {
+            if (child.matches('[class$="__content"], .experience-list, .projects-section__list, .project-showcase, .faq-list')) return
+            child.style.setProperty('--reveal-delay', `${Math.min(index, 4) * 90}ms`)
+            child.classList.add('reveal-target')
+            targets.push(child)
+          })
+        })
+      })
       const observer = 'IntersectionObserver' in window ? new IntersectionObserver(entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -20,10 +33,9 @@ export function usePortfolioMotion() {
             observer?.unobserve(entry.target)
           }
         })
-      }, { threshold: 0, rootMargin: '0px 0px -32px 0px' }) : null
+      }, { threshold: 0, rootMargin: '0px 0px -24px 0px' }) : null
       targets.forEach(target => {
-        target.classList.add('reveal-target')
-        if (observer && target.getBoundingClientRect().top > window.innerHeight) {
+        if (observer && target.getBoundingClientRect().top >= window.innerHeight) {
           target.classList.add('reveal-pending')
           observer.observe(target)
         }
@@ -40,11 +52,15 @@ export function usePortfolioMotion() {
       })
       const resetButtons = () => buttons.forEach(button => { button.style.translate = '' })
       window.addEventListener('scroll', resetButtons, options)
+      window.addEventListener('blur', resetButtons, options)
       fine.addEventListener('change', resetButtons, options)
       cleanup = () => {
         controller.abort()
         observer?.disconnect()
-        targets.forEach(target => target.classList.remove('reveal-pending', 'reveal-target'))
+        targets.forEach(target => {
+          target.classList.remove('reveal-pending', 'reveal-target')
+          target.style.removeProperty('--reveal-delay')
+        })
         resetButtons()
       }
     }

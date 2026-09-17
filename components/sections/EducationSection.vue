@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { portfolioData } from '~/data/portfolio'
 import SectionHeading from '~/components/ui/SectionHeading.vue'
+import AnimatedStat from '~/components/ui/AnimatedStat.vue'
 const education = portfolioData.education
 </script>
 
@@ -43,7 +44,7 @@ const education = portfolioData.education
 
           <div class="education-meta__item education-meta__item--cgpa">
             <dt>CGPA</dt>
-            <dd>{{ education.cgpa }}</dd>
+            <dd><AnimatedStat :value="education.cgpa" /></dd>
           </div>
         </dl>
       </article>

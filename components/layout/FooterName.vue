@@ -147,19 +147,19 @@ onBeforeUnmount(() => dispose())
   container-type: inline-size;
   width: 100%;
   margin: 0 auto clamp(24px, 4vw, 64px);
-  color: #fff;
+  color: var(--color-ivory);
 }
 
 .footer-signature__meta {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 8px 20px;
+  gap: var(--space-2xs) var(--space-md);
   padding-top: clamp(8px, 1.5vw, 24px);
   font-family: var(--font-mono);
-  font-size: clamp(0.6875rem, 0.8vw, 0.75rem);
+  font-size: var(--text-label);
   line-height: 1.5;
-  letter-spacing: 0.1em;
+  letter-spacing: var(--tracking-label);
   text-transform: uppercase;
 }
 

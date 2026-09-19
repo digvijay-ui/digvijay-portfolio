@@ -8,6 +8,7 @@ import SiteFooter from '~/components/layout/SiteFooter.vue'
 import SiteHeader from '~/components/layout/SiteHeader.vue'
 import ProjectsSection from '~/components/sections/ProjectsSection.vue'
 import FaqSection from '~/components/sections/FaqSection.vue'
+import CustomCursor from '~/components/ui/CustomCursor.vue'
 import { usePortfolioMotion } from '~/composables/usePortfolioMotion'
 
 usePortfolioMotion()
@@ -100,6 +101,7 @@ useHead({
 </script>
 
 <template>
+  <CustomCursor />
   <a href="#main-content" class="skip-link">Skip to content</a>
   <SiteHeader />
 

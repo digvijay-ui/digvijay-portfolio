@@ -12,20 +12,24 @@ Nuxt 3, Vue 3, TypeScript, existing Tailwind module and CSS. No new runtime depe
 
 ## Tokens
 
-Defined in `assets/css/main.css`.
+Defined in `assets/css/tokens.css` and consumed by the shared styles in
+`assets/css/main.css` and `assets/css/hero.css`.
 
 | Token | Value | Purpose |
 | --- | --- | --- |
-| `--color-page` | `#080908` | Near-black canvas |
-| `--color-surface` | `#111310` | Restrained secondary surfaces |
-| `--color-surface-alt` | `#191c18` | Raised surfaces |
-| `--color-border` | `#30332f` | Fine rules and structure |
-| `--color-text-primary` | `#f5f5ef` | Warm white headings and primary copy |
-| `--color-text-secondary` | `#b0b3aa` | Body copy |
-| `--color-text-muted` | `#969c91` | Readable metadata |
-| `--color-accent` | `#b6ff4a` | Neon green, actions and selective emphasis |
+| `--color-ink` | `#090b0a` | Near-black canvas |
+| `--color-ivory` | `#f4f1e8` | Warm primary copy |
+| `--color-lime` | `#b6ff4a` | Primary actions and selective emphasis |
+| `--color-blue` | `#aac4ff` | Secondary links and project signals |
+| `--color-moss` | `#7f8f70` | Muted technical accents |
+| `--color-border` | `rgb(244 241 232 / 13%)` | Fine rules and structure |
 
-Use green on key actions, status, section numbers and hover feedback. Below the hero, keep solid surfaces and restrained accents. The hero alone uses blurred navigation, atmospheric shading and a subtle terminal glow. The developer fragment uses a faint 22px grid; project surrounds use solid muted green and pale neutral tones. Spacing establishes hierarchy; decorative section and row dividers have been removed.
+Use lime on key actions, status, section numbers and hover feedback. Soft blue
+supports secondary links while moss carries low-priority technical detail. A
+low-opacity 72px technical grid and static SVG grain unify the page; both stay
+subtle enough to preserve text contrast. Project surrounds use solid muted
+green and pale neutral tones, with spacing and fine borders establishing the
+hierarchy.
 
 ## Typography
 
@@ -33,17 +37,17 @@ Use green on key actions, status, section numbers and hover feedback. Below the 
 - **Inter 400/500:** readable body and controls, generally 14–20px with 1.55–1.75 line height.
 - **JetBrains Mono:** restrained labels, technology tags and technical metadata, approximately 10–12px.
 - **Georgia regular/italic:** editorial hero statement; the role is italic neon green.
-- Hero: fluid 46–96px desktop, 39–66px mobile. H2: 36–60px. Project H3: 24–48px.
+- Hero: fluid 38–72px desktop, 31–49px mobile. H2: 36–64px. Project H3: 32–52px.
 - Existing Google Fonts stylesheet uses `display=swap`; fallbacks remain usable.
 
 ## Layout
 
-Content width: 1320px. Gutters: `clamp(22px, 5vw, 88px)`. Section spacing: `clamp(80px, 10vw, 150px)`.
+Content width: 1260px. Gutters: `clamp(1.25rem, 4.5vw, 5.5rem)`. Section spacing: `clamp(5.5rem, 8vw, 9.5rem)`.
 
-1. **Header:** floating sticky off-white rounded bar, DIGVIJAY* brand, About/Work/Resume links and a dark Contact me button. Mobile menu at 760px and below retains Escape dismissal, focus cycling and scroll locking.
+1. **Header:** floating sticky off-white rounded bar, DIGVIJAY* brand, About/Work/Resume links and a dark Contact me button. A single sliding underline follows the active page region, while a two-pixel lime progress bar shows document position. Mobile uses a compact two-column menu at 760px and below with Escape dismissal, focus cycling, first-link focus and scroll locking.
 2. **Hero:** full-viewport night environment, upper-left serif statement and supporting copy, original lower-right terminal laptop and centered scroll anchor. See the hero specification below.
-3. **About:** asymmetric heading and editorial biography, followed by two-column quick facts.
-4. **Experience:** a muted section with open spacing, company identity, dates, technologies and all existing achievements.
+3. **About:** a 12-column asymmetric editorial composition pairs the section heading with a concise developer statement, short biography, code-native delivery-system diagram and four animated facts covering location, education, specialization and shipped project experience.
+4. **Experience:** a sticky editorial introduction leads into the verified current Brainzym role. Company details, grouped production technologies and five concise ownership milestones form a scroll-driven timeline instead of a long achievement list.
 5. **Projects:** large numbered case studies. Each has a real screenshot in a browser-like frame, original description and impact, contribution list, technologies and live/GitHub actions. Alternating solid image surrounds establish rhythm.
 6. **Skills:** category filters and structured rows, sourced from the existing skill groups. The default shows every category. Filters use native buttons and `aria-pressed`.
 7. **Education:** compact academic record, preserving institution, location, period and CGPA.
@@ -58,19 +62,21 @@ At 1050px, supporting columns tighten and skills become a single column. At 760p
 `composables/usePortfolioMotion.ts` provides optional enhancements, cleaned up on unmount and reconfigured when the motion preference changes.
 
 - Hero intro: a short optional black/green letter sequence, once per browser tab; skipped for reduced motion. No decorative intro rule.
-- Hero masking: 900ms entrance, 100ms line offsets, using transforms inside overflow masks.
-- Section reveals: 22px vertical offset, 700ms, triggered once by IntersectionObserver. Content is visible before JavaScript; only offscreen targets are hidden after enhancement initializes. Keyboard focus reveals a pending target immediately.
+- Hero masking: the same 720ms entrance curve as section reveals, using short staggered line offsets inside overflow masks.
+- Section reveals: one shared 720ms ease, 20px vertical offset and restrained 70ms sibling stagger, triggered once by IntersectionObserver. Content is visible before JavaScript; only offscreen targets are hidden after enhancement initializes. Keyboard focus reveals a pending target immediately.
 - Single-page transitions: native smooth anchor scrolling and section entrances; there are no additional page routes to animate.
-- Magnetic controls: small pointer offsets, only for a fine pointer, reset on leave, blur, scrolling or pointer changes.
+- Navigation tracking: a frame-throttled scroll measurement maps About and Experience to About, Projects through FAQ to Work, and the page end to Contact. The underline measures the active control after font loading and responsive layout changes.
+- Experience timeline: a frame-throttled section measurement drives the chapter rail and responsibility line while native document scrolling remains untouched. Responsibility milestones use the same reveal curve as the rest of the page.
+- Magnetic controls: small pointer offsets on the desktop brand and navigation controls, only for a fine mouse pointer, reset on leave, cancellation, blur, scrolling or pointer changes.
 - Project images: 1.025 scale on hover over 650ms, inside the existing media container.
 - Footer: existing animation-frame proximity behavior retained, with approximately 7px maximum lift. It pauses offscreen and when the tab is hidden.
-- Native cursor remains visible. Cursor interactions are local to controls, the fragment and the signature.
-- Reduced motion: no intro, masking, smooth scrolling, reveals, image transforms or magnetic movement. Footer letters remain still. Preferences are respected on load and when changed during a session.
+- Custom cursor: fine-pointer desktops receive a 6px lime point and softly lagged 30px ring. The ring expands over interactive elements; labels are limited to VIEW on project media and OPEN on each project launch control. It initializes only after a real mouse movement, uses no perpetual animation loop and is never enabled for touch input.
+- Reduced motion: no intro, masking, smooth scrolling, reveals, image transforms, magnetic movement or custom cursor. Footer letters remain still. Preferences are respected on load and when changed during a session.
 
 ## Accessibility, SEO and performance
 
 - One visible H1; correctly linked section headings; semantic lists, figures, navigation, buttons and disclosures.
-- Skip link, visible green focus outlines, 44px primary touch targets, keyboard-usable mobile navigation and FAQs.
+- Skip link, visible green focus outlines, 44px primary touch targets, `aria-current` navigation state, keyboard-usable mobile navigation and FAQs.
 - Links preserve their destinations and download/new-tab behavior; external new-tab links use `noopener noreferrer`.
 - Real image alt text and explicit dimensions; below-fold screenshots load lazily with asynchronous decoding.
 - Content renders on the server. Core reading, anchor links, FAQs and downloads work without JavaScript; no-script mobile navigation remains available.
@@ -79,12 +85,18 @@ At 1050px, supporting columns tighten and skills become a single column. At 760p
 
 ## Implementation map
 
-- `assets/css/main.css`: tokens, shared editorial layout, responsive rules and core motion.
+- `assets/css/tokens.css`: palette, typography, spacing, layout, radius, control and focus tokens.
+- `assets/css/main.css`: shared editorial layout, global texture, responsive rules and core motion.
+- `assets/css/story.css`: Phase 4 About composition, system diagram, fact grid, sticky Experience chapter and responsive timeline.
 - `components/sections/*`: existing content sections and recruiter FAQ.
+- `components/sections/AboutSection.vue`: developer statement, delivery-system graphic and animated fact structure.
+- `components/sections/ExperienceSection.vue`: reduced-motion-aware timeline progress lifecycle.
+- `components/experience/ExperienceCard.vue`: company record, grouped stack and ownership milestones.
 - `components/projects/ProjectShowcase.vue`: case-study presentation.
-- `components/layout/SiteHeader.vue`: existing navigation behavior and responsive header.
+- `components/layout/SiteHeader.vue`: active-section tracking, sliding indicator, scroll progress and accessible compact navigation.
+- `components/ui/CustomCursor.vue`: pointer-capability-aware cursor, interaction states and contextual labels.
 - `components/layout/FooterName.vue`: letter interaction, using the shared green token.
-- `composables/usePortfolioMotion.ts`: reveal and magnetic interaction lifecycle.
+- `composables/usePortfolioMotion.ts`: unified reveal sequence and magnetic interaction lifecycle.
 
 The legacy design document at `docs/design (2).md` points to this finalized system.
 
@@ -93,15 +105,23 @@ The legacy design document at `docs/design (2).md` points to this finalized syst
 - `npm run typecheck`, `npm run build` and `npm run generate` passed; static generation produced eight routes, including the homepage, sitemap and robots file.
 - Chromium checks passed at 1440, 1024, 768, 390 and 320px with no horizontal overflow or browser errors.
 - Verified skill filtering, native FAQ keyboard behavior, mobile navigation and focus cycling, anchor targets, heading associations and resume response.
-- Verified no-JavaScript navigation/FAQ, reduced-motion rendering, live preference changes, magnetic controls and footer letter proximity.
-- Existing package/lock files, Nuxt configuration, portfolio data, types and deployment configuration are unchanged.
+- Verified active-section mapping, indicator position, progress completion, compact mobile layout, first-link focus, focus cycling, Escape restoration, touch cursor suppression and reduced-motion rendering.
+- Phase 4 checks passed at 1440×1000 and 390×844 with no horizontal overflow or browser errors. Verified the 12-column/one-column About layouts, system diagram geometry, four-column/single-column facts, sticky/static Experience headings, progressive timeline state and complete reduced-motion rendering.
+- Existing package/lock files and deployment configuration are unchanged. Portfolio data and types now model the About statement, grouped production stack and concise responsibility records; Nuxt configuration registers the token and story style layers around the existing stylesheets.
 
+## About and Experience story — September 2026
+
+- Employment information was checked before redesigning the copy. The bundled resume identifies the current position as **Full Stack Developer Intern at Brainzym Private Ltd, Jan 2026 – Present**. The matching public LinkedIn profile still lists BrainZym as the current employer and the 2022–2026 education period, but does not expose the exact role title publicly. The portfolio therefore retains the resume title and dates rather than inferring a promotion or employment change.
+- The About statement condenses verified work already present in the resume: responsive interfaces, REST APIs, database-backed workflows and production delivery. It introduces no new title, metric or availability claim.
+- The diagram is HTML and inline SVG only. It maps the existing interface, API and data technologies without network assets, canvas work or continuous animation.
+- Experience responsibilities were shortened into five evidence-based ownership areas: production feature delivery, admin dashboard ownership, student access, reliability work and collaboration with the tech lead and product owner. No unsupported counts or performance percentages were added.
+- Desktop keeps the About and Experience compositions asymmetric and allows the Experience introduction to remain sticky. Tablet collapses technology groups into a horizontal overview; mobile stacks all content, turns the facts into a readable single column below 420px and disables sticky positioning.
 
 ## Night hero — September 2026
 
 Scope: hero and its requested shared navigation only. All below-fold content, section colors, data, SEO and project imagery are retained. Earlier validation above describes the previous design, not this revision.
 
-- `assets/css/hero.css` owns the hero and navbar overrides. Shared accent remains `#b6ff4a`; hero-local `--hero-green` is `#39FF6A`. Canvas is black/deep charcoal with dark forest greens and white copy. Navbar uses a slightly transparent off-white surface with backdrop blur, dark controls and a darker green focus outline for contrast.
+- `assets/css/hero.css` owns the hero and navbar overrides. Hero-local `--hero-green` aliases the shared electric-lime token. Canvas is black/deep charcoal with dark forest greens and warm-ivory copy. Navbar uses a slightly transparent ivory surface with backdrop blur, dark controls and a darker green focus outline for contrast.
 - `HeroWorld.vue` is an original inline SVG pixel illustration: deterministic stars, faint dot grid, moon, distant city, stepped forest silhouettes, cedar canopy, textured ground, laptop terminal, keyboard, mug and notebook. No copied reference artwork, image downloads, canvas loop or additional dependencies. Decorative artwork is hidden from assistive technology.
 - Hero uses `100svh`, with minimum height only for short screens to preserve readable content. Georgia is reused for 38–72px desktop serif type, 31–49px mobile; role italic green. Inter supporting copy is 14–17px. Exact user-provided introduction and product description are retained.
 - Navbar sticks 18px from the top (12px mobile), within a 960px rounded surface. About targets `#about`, Work targets `#projects`, Resume opens the existing PDF, Contact targets `#contact`. Mobile navigation keeps the existing keyboard and dismissal behavior.

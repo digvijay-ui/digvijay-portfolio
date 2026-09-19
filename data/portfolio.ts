@@ -7,9 +7,11 @@ export const portfolioData: PortfolioData = {
   email: 'rajputdigvijaysinh45@gmail.com',
   about: {
     heading: 'Engineering reliable web experiences.',
+    statement:
+      'I turn real product requirements into responsive interfaces, dependable APIs and production-ready workflows.',
     paragraphs: [
-      'I’m Digvijaysinh Rajput, a Full Stack Developer in Bengaluru and a 2026 B.E. Information Technology graduate. At Brainzym Private Ltd, I build and maintain production web applications using Vue.js, TypeScript, Node.js, Express.js and PostgreSQL.',
-      'I enjoy developing responsive Vue.js and React interfaces, REST APIs and reliable full-stack features. I am currently seeking Full Stack Developer or Frontend Developer roles in Bengaluru.',
+      'I’m Digvijaysinh Rajput, a Full Stack Developer based in Bengaluru and a 2026 B.E. Information Technology graduate.',
+      'At Brainzym Private Ltd, I work across Vue.js interfaces, Node.js and Express APIs, and PostgreSQL-backed product flows. I’m currently seeking Full Stack or Frontend Developer roles in Bengaluru.',
     ],
   },
   navigation: [
@@ -21,11 +23,6 @@ export const portfolioData: PortfolioData = {
   ],
   quickFacts: [
     {
-      id: 'experience',
-      label: 'Experience',
-      value: '2 Projects Shipped',
-    },
-    {
       id: 'location',
       label: 'Location',
       value: 'Bengaluru, India',
@@ -36,9 +33,14 @@ export const portfolioData: PortfolioData = {
       value: 'B.E. Information Technology',
     },
     {
-      id: 'focus',
-      label: 'Focus',
+      id: 'specialization',
+      label: 'Specialization',
       value: 'Full Stack / Frontend',
+    },
+    {
+      id: 'project-experience',
+      label: 'Project experience',
+      value: '2 Projects Shipped',
     },
   ],
   experiences: [
@@ -54,29 +56,56 @@ export const portfolioData: PortfolioData = {
       endDate: 'Present',
       period: 'Jan 2026 – Present',
       linkedinUrl: 'https://linkedin.com/in/rajput-digvijaysinh-7515b4254',
-      technologies: [
-        'Vue.js',
-        'TypeScript',
-        'Tailwind CSS',
-        'Axios',
-        'Node.js',
-        'Express.js',
-        'PostgreSQL',
-        'REST APIs',
-        'Git',
-        'Zod',
+      technologyGroups: [
+        {
+          label: 'Interface',
+          technologies: ['Vue.js', 'TypeScript', 'Tailwind CSS', 'Axios'],
+        },
+        {
+          label: 'Server',
+          technologies: ['Node.js', 'Express.js', 'REST APIs'],
+        },
+        {
+          label: 'Data & quality',
+          technologies: ['PostgreSQL', 'Zod', 'Git'],
+        },
       ],
-      achievements: [
-        // TODO(digvijay): Add the number of production features or modules shipped at Brainzym.
-        "Developed and maintained full-stack features for Brainzym's core web platform using Vue.js, TypeScript, Node.js, Express.js and PostgreSQL.",
-        // TODO(digvijay): Add the number of reusable admin dashboard components if you have it.
-        'Took ownership of the admin dashboard module, building reusable Vue.js components with form handling, Zod validation, API error handling and production-focused testing.',
-        // TODO(digvijay): Add the CSV import scale, such as row count or student records processed.
-        'Designed and implemented a passcode-based student login flow covering Express.js REST API endpoints, PostgreSQL schema changes and bulk CSV imports.',
-        // TODO(digvijay): Add bug count, stability percentage or response-time improvement if tracked.
-        'Troubleshot and improved existing frontend and backend modules, resolving bugs and improving application stability.',
-        // TODO(digvijay): Add team size or sprint cadence if you want this quantified.
-        'Collaborated with the tech lead and product owner in an Agile team, participating in sprint planning, sprint reviews, code reviews and technical discussions.',
+      responsibilities: [
+        {
+          id: 'production-delivery',
+          label: 'Production delivery',
+          title: 'Core platform features',
+          description:
+            'Build and maintain production features across Vue.js interfaces, Express REST APIs and PostgreSQL-backed workflows.',
+        },
+        {
+          id: 'dashboard-ownership',
+          label: 'End-to-end ownership',
+          title: 'Admin dashboard module',
+          description:
+            'Own reusable components, forms, Zod validation, API error handling and release-focused testing.',
+        },
+        {
+          id: 'student-access',
+          label: 'Full-stack workflow',
+          title: 'Student access flow',
+          description:
+            'Designed the passcode login journey across API endpoints, PostgreSQL schema changes and bulk CSV imports.',
+        },
+        {
+          id: 'product-reliability',
+          label: 'Reliability',
+          title: 'Existing product systems',
+          description:
+            'Troubleshoot frontend and backend modules to resolve critical bugs and improve stability and performance.',
+        },
+        {
+          id: 'team-delivery',
+          label: 'Collaboration',
+          title: 'Product delivery loop',
+          description:
+            'Translate requirements with the tech lead and product owner through planning, reviews, demos and code review.',
+        },
       ],
     },
   ],

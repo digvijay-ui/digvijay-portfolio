@@ -12,7 +12,20 @@ export interface QuickFact {
 
 export interface AboutContent {
   heading: string
+  statement: string
   paragraphs: string[]
+}
+
+export interface ExperienceResponsibility {
+  id: string
+  label: string
+  title: string
+  description: string
+}
+
+export interface ExperienceTechnologyGroup {
+  label: string
+  technologies: string[]
 }
 
 export interface Experience {
@@ -27,8 +40,8 @@ export interface Experience {
   location: string
   startDate: string
   endDate: string
-  achievements: string[]
-  technologies: string[]
+  responsibilities: ExperienceResponsibility[]
+  technologyGroups: ExperienceTechnologyGroup[]
   linkedinUrl?: string
 }
 

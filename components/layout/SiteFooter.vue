@@ -18,7 +18,7 @@ import FooterName from './FooterName.vue'
 <style scoped>
 .site-footer {
   background: var(--color-page);
-  padding: 28px var(--page-gutter);
+  padding: var(--space-lg) var(--page-gutter);
 }
 
 .site-footer__inner {
@@ -26,7 +26,7 @@ import FooterName from './FooterName.vue'
   width: min(100%, var(--content-width));
   margin: 0 auto;
   grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-  gap: 18px;
+  gap: var(--space-sm);
   align-items: center;
 }
 
@@ -35,7 +35,7 @@ import FooterName from './FooterName.vue'
   margin: 0;
   color: var(--color-text-muted);
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: var(--text-label);
   line-height: 1.5;
 }
 
@@ -50,7 +50,7 @@ import FooterName from './FooterName.vue'
   min-height: 36px;
   justify-self: end;
   text-decoration: none;
-  transition: color 180ms ease-out;
+  transition: color var(--duration-fast) ease-out;
 }
 
 .site-footer a:hover,
@@ -59,18 +59,18 @@ import FooterName from './FooterName.vue'
 }
 
 .site-footer a:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 5px;
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
 }
 
 @media (max-width: 767px) {
   .site-footer {
-    padding: 28px var(--page-gutter);
+    padding: var(--space-lg) var(--page-gutter);
   }
 
   .site-footer__inner {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: var(--space-xs);
   }
 
   .site-footer p:nth-child(2),

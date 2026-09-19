@@ -11,7 +11,12 @@ export default defineNuxtConfig({
     inlineStyles: false,
   },
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/sitemap', '@nuxtjs/robots'],
-  css: ['~/assets/css/main.css', '~/assets/css/hero.css'],
+  css: [
+    '~/assets/css/tokens.css',
+    '~/assets/css/main.css',
+    '~/assets/css/hero.css',
+    '~/assets/css/story.css',
+  ],
   site: {
     url: productionSiteUrl,
   },

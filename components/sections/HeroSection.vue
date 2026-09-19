@@ -66,7 +66,7 @@ onBeforeUnmount(() => dispose())
     <div class="night-hero__copy">
       <p class="night-hero__eyebrow mono hero-enter"></p>
       <h1 id="hero-title">
-        <span class="hero-enter">I am Digvijaysinh Rajput</span>
+        <span class="hero-enter">Digvijaysinh Rajput</span>
         <span class="hero-enter"><em>Full Stack Developer.</em></span>
         <span class="hero-enter">Building products that scale.</span>
       </h1>

@@ -3,7 +3,6 @@ import { onBeforeUnmount, onMounted, ref } from 'vue'
 import HeroWorld from './HeroWorld.vue'
 
 const hero = ref<HTMLElement | null>(null)
-const loading = ref(false)
 const entered = ref(false)
 let dispose = () => {}
 onMounted(() => {
@@ -12,20 +11,14 @@ onMounted(() => {
   const world = hero.value?.querySelector<SVGSVGElement>('.night-world')
   const spotlight = hero.value?.querySelector<SVGCircleElement>('.terminal-spotlight')
   let frame = 0
-  let timer: ReturnType<typeof setTimeout> | undefined
-  const finish = () => { loading.value = false; entered.value = true }
-  if (!reduced.matches && !sessionStorage.getItem('night-hero-intro')) {
-    loading.value = true
-    sessionStorage.setItem('night-hero-intro', '1')
-    timer = setTimeout(finish, 1900)
-  } else finish()
+  entered.value = true
   const reset = () => {
     if (frame) cancelAnimationFrame(frame)
     frame = 0
     spotlight?.setAttribute('opacity', '0')
     hero.value?.style.setProperty('--world-x', '0px')
     hero.value?.style.setProperty('--world-y', '0px')
-    if (reduced.matches) { clearTimeout(timer); finish() }
+    if (reduced.matches) entered.value = true
   }
   const move = (event: PointerEvent) => {
     if (reduced.matches || !fine.matches || event.pointerType !== 'mouse' || frame) return
@@ -50,17 +43,13 @@ onMounted(() => {
   window.addEventListener('blur', reset)
   reduced.addEventListener('change', reset)
   fine.addEventListener('change', reset)
-  dispose = () => { clearTimeout(timer); reset(); hero.value?.removeEventListener('pointermove', move); hero.value?.removeEventListener('pointerleave', reset); hero.value?.removeEventListener('pointercancel', reset); window.removeEventListener('blur', reset); reduced.removeEventListener('change', reset); fine.removeEventListener('change', reset) }
+  dispose = () => { reset(); hero.value?.removeEventListener('pointermove', move); hero.value?.removeEventListener('pointerleave', reset); hero.value?.removeEventListener('pointercancel', reset); window.removeEventListener('blur', reset); reduced.removeEventListener('change', reset); fine.removeEventListener('change', reset) }
 })
 onBeforeUnmount(() => dispose())
 </script>
 
 <template>
   <section id="home" ref="hero" class="night-hero" :class="{ 'night-hero--entered': entered }" aria-labelledby="hero-title">
-    <div v-if="loading" class="hero-loader" aria-hidden="true">
-      <p>FULL STACK DEVELOPER</p>
-      <div><span v-for="(letter, i) in 'DIGVIJAY'" :key="i" :style="{ '--letter-delay': `${350 + i * 110}ms` }">{{ letter }}</span></div>
-    </div>
     <HeroWorld />
     <div class="night-hero__shade" aria-hidden="true" />
     <div class="night-hero__copy">
@@ -70,7 +59,7 @@ onBeforeUnmount(() => dispose())
         <span class="hero-enter"><em>Full Stack Developer.</em></span>
         <span class="hero-enter">Building products that scale.</span>
       </h1>
-      <p class="night-hero__description hero-enter">I build responsive interfaces and reliable full-stack products using Vue, React, TypeScript, Node.js, and PostgreSQL—turning real business requirements into clean, scalable experiences.</p>
+      <p class="night-hero__description hero-enter">I build responsive interfaces and reliable full-stack products with Vue, React, TypeScript, Node.js and PostgreSQL.</p>
     </div>
     <a class="night-hero__scroll" href="#about" aria-label="Scroll to About"><span aria-hidden="true">↓</span></a>
     <span class="night-hero__caption mono" aria-hidden="true"></span>

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import type { Experience } from '~/types/portfolio'
 import TechTag from '~/components/ui/TechTag.vue'
 
@@ -6,7 +7,11 @@ interface ExperienceCardProps {
   experience: Experience
 }
 
-defineProps<ExperienceCardProps>()
+const props = defineProps<ExperienceCardProps>()
+
+const technologies = computed(() => [
+  ...new Set(props.experience.technologyGroups.flatMap(group => group.technologies)),
+])
 </script>
 
 <template>
@@ -55,36 +60,27 @@ defineProps<ExperienceCardProps>()
     </header>
 
     <div class="experience-card__story">
-      <aside class="experience-card__stack" aria-label="Production technology stack">
-        <p class="mono">Production stack</p>
-        <div
-          v-for="group in experience.technologyGroups"
-          :key="group.label"
-          class="experience-card__technology-group"
-        >
-          <h4>{{ group.label }}</h4>
-          <div class="experience-card__tags">
-            <TechTag
-              v-for="technology in group.technologies"
-              :key="technology"
-              :label="technology"
-            />
-          </div>
-        </div>
-      </aside>
-
-      <ol class="experience-card__responsibilities" aria-label="Responsibilities and ownership">
+      <ul class="experience-card__responsibilities" aria-label="Strongest responsibilities and achievements">
         <li
-          v-for="(responsibility, index) in experience.responsibilities"
+          v-for="responsibility in experience.responsibilities"
           :key="responsibility.id"
           class="experience-milestone"
         >
-          <span class="experience-milestone__node" aria-hidden="true">{{ String(index + 1).padStart(2, '0') }}</span>
-          <p class="experience-milestone__label mono">{{ responsibility.label }}</p>
           <h4>{{ responsibility.title }}</h4>
           <p>{{ responsibility.description }}</p>
         </li>
-      </ol>
+      </ul>
+
+      <aside class="experience-card__stack" aria-label="Production technology stack">
+        <p class="mono">Production stack</p>
+        <div class="experience-card__tags">
+          <TechTag
+            v-for="technology in technologies"
+            :key="technology"
+            :label="technology"
+          />
+        </div>
+      </aside>
     </div>
   </article>
 </template>

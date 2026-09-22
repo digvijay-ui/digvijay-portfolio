@@ -25,11 +25,6 @@
 .night-hero__scroll { position: absolute; z-index: 2; bottom: 28px; left: 50%; transform: translateX(-50%); display: grid; place-items: center; width: 58px; height: 66px; border: 1px solid rgb(244 241 232 / 46%); border-radius: var(--radius-lg); background: rgb(255 255 255 / 3%); backdrop-filter: blur(8px); text-decoration: none; font-size: 26px; }
 .night-hero__scroll:hover { color: var(--hero-green); border-color: var(--hero-green); }
 .night-hero__caption { position: absolute; bottom: 40px; right: var(--page-gutter); color: var(--color-moss); font-size: var(--text-label); letter-spacing: var(--tracking-label); }
-.hero-loader { position: fixed; inset: 0; z-index: 150; display: flex; flex-direction: column; justify-content: center; align-items: center; background: #030604; pointer-events: none; animation: loader-exit var(--duration-base) 1.55s both; }
-.hero-loader p { font-family: var(--font-mono); font-size: clamp(12px, 2vw, 16px); color: var(--color-lime); letter-spacing: .2em; }
-.hero-loader > div { display: flex; gap: .06em; font-family: var(--font-display); font-size: clamp(44px, 9vw, 110px); letter-spacing: -.055em; }
-.hero-loader span { animation: hero-rise var(--duration-base) var(--ease) var(--letter-delay) both; }
-@keyframes loader-exit { to { opacity: 0; visibility: hidden; } }
 @keyframes hero-rise { from { opacity: 0; transform: translateY(var(--motion-distance)); } to { opacity: 1; transform: none; } }
 @keyframes terminal-blink { 50% { opacity: 0; } }
 @keyframes terminal-breathe { 50% { opacity: .65; } }
@@ -70,7 +65,7 @@
   .night-hero__scroll { width: 48px; height: 54px; bottom: 20px; border-radius: 17px; }
 }
 @media (max-height: 740px) and (min-width: 761px) { .night-hero { min-height: max(650px, 100svh); } .night-hero__copy { padding-top: 135px; } .night-hero h1 { font-size: clamp(2.375rem, 1.5rem + 2.5vw, 3.625rem); } }
-@media (prefers-reduced-motion: reduce) { .hero-loader { display: none; } .world-depth, .world-workspace { transform: none; transition: none; } }
+@media (prefers-reduced-motion: reduce) { .world-depth, .world-workspace { transform: none; transition: none; } }
 @media (scripting: none) and (max-width: 760px) { .site-header { height: auto; flex-wrap: wrap; margin-bottom: -140px; } .site-header__nav { background: transparent; padding: 0; border: 0; border-radius: 0; } .site-header__contact { margin: 0; } .night-hero__copy { padding-top: 200px; } }
 @media (min-width: 761px) and (max-width: 900px) { .night-world { width: 170%; left: -65%; } }
 @media (max-width: 360px) { .night-world { height: 65%; } }

@@ -15,20 +15,24 @@ usePortfolioMotion()
 import SkillsSection from '~/components/sections/SkillsSection.vue'
 
 const seoDescription =
-  'Full Stack Developer in Bengaluru specializing in Vue.js, React, TypeScript, Node.js, PostgreSQL and MongoDB. Explore my experience, projects and technical skills.'
+  'Associate Full Stack Developer at Brainzym Private Ltd in Bengaluru, specializing in Vue.js, React, TypeScript, Node.js, PostgreSQL and MongoDB.'
 const runtimeConfig = useRuntimeConfig()
 const siteUrl = String(runtimeConfig.public.siteUrl)
 const homepageUrl = new URL('/', siteUrl).toString()
 const socialImageUrl =
   'https://digvijay-portfolio-cyan.vercel.app/og-image-v2.png'
 const socialImageAlt =
-  'Open Graph image for Digvijaysinh Rajput, Full Stack Developer, featuring Vue, React, TypeScript, Node.js and PostgreSQL'
+  'Open Graph image for Digvijaysinh Rajput, Associate Full Stack Developer, featuring Vue, React, TypeScript, Node.js and PostgreSQL'
 
 const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Digvijaysinh Rajput',
-  jobTitle: 'Full Stack Developer',
+  jobTitle: 'Associate Full Stack Developer',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Brainzym Private Ltd',
+  },
   homeLocation: {
     '@type': 'Place',
     name: 'Bengaluru, Karnataka, India',
@@ -51,9 +55,9 @@ const personSchema = {
 }
 
 useSeoMeta({
-  title: 'Digvijaysinh Rajput | Full Stack Developer',
+  title: 'Digvijaysinh Rajput | Associate Full Stack Developer',
   description: seoDescription,
-  ogTitle: 'Digvijaysinh Rajput | Full Stack Developer',
+  ogTitle: 'Digvijaysinh Rajput | Associate Full Stack Developer',
   ogDescription: seoDescription,
   ogType: 'website',
   ogUrl: homepageUrl,
@@ -63,7 +67,7 @@ useSeoMeta({
   ogImageHeight: 630,
   ogImageType: 'image/png',
   twitterCard: 'summary_large_image',
-  twitterTitle: 'Digvijaysinh Rajput | Full Stack Developer',
+  twitterTitle: 'Digvijaysinh Rajput | Associate Full Stack Developer',
   twitterDescription: seoDescription,
   twitterImage: socialImageUrl,
   twitterImageAlt: socialImageAlt,

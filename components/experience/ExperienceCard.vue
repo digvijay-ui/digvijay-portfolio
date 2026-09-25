@@ -59,7 +59,10 @@ const technologies = computed(() => [
       </a>
     </header>
 
-    <div class="experience-card__story">
+    <div
+      v-if="experience.responsibilities.length || technologies.length"
+      class="experience-card__story"
+    >
       <ul class="experience-card__responsibilities" aria-label="Strongest responsibilities and achievements">
         <li
           v-for="responsibility in experience.responsibilities"
@@ -71,7 +74,11 @@ const technologies = computed(() => [
         </li>
       </ul>
 
-      <aside class="experience-card__stack" aria-label="Production technology stack">
+      <aside
+        v-if="technologies.length"
+        class="experience-card__stack"
+        aria-label="Production technology stack"
+      >
         <p class="mono">Production stack</p>
         <div class="experience-card__tags">
           <TechTag

@@ -2,7 +2,7 @@ import type { PortfolioData } from '~/types/portfolio'
 
 export const portfolioData: PortfolioData = {
   name: 'Digvijaysinh Rajput',
-  role: 'Full Stack Developer',
+  role: '',
   location: 'Bengaluru, Karnataka, India',
   email: 'rajputdigvijaysinh45@gmail.com',
   about: {
@@ -10,7 +10,7 @@ export const portfolioData: PortfolioData = {
     statement:
       'I turn real product requirements into responsive interfaces, dependable APIs and production-ready workflows.',
     paragraphs: [
-      'Based in Bengaluru, I build Vue.js interfaces, Node.js and Express APIs, and PostgreSQL-backed product flows at Brainzym. I’m a 2026 B.E. Information Technology graduate.',
+      'Based in Bengaluru, I work full-time as an Associate Full Stack Developer at Brainzym Private Ltd, building Vue.js interfaces, Node.js and Express APIs, and PostgreSQL-backed product flows. I’m a 2026 B.E. Information Technology graduate.',
     ],
   },
   navigation: [
@@ -44,16 +44,15 @@ export const portfolioData: PortfolioData = {
   ],
   experiences: [
     {
-      id: 'brainzym-full-stack-developer-intern',
-      role: 'Full Stack Developer Intern',
+      id: 'brainzym-associate-full-stack-developer',
+      role: 'Associate Full Stack Developer (Full-time)',
       company: 'Brainzym Private Ltd',
       logo: '/images/companies/brainzym-logo.png',
       logoAlt: 'Brainzym Private Ltd logo',
       initials: 'BZ',
       location: 'Bengaluru, Karnataka',
-      startDate: '2026-01',
       endDate: 'Present',
-      period: 'Jan 2026 – Present',
+      period: 'Present',
       linkedinUrl: 'https://linkedin.com/in/rajput-digvijaysinh-7515b4254',
       technologyGroups: [
         {

@@ -38,8 +38,8 @@ export interface Experience {
   initials: string
   period: string
   location: string
-  startDate: string
-  endDate: string
+  startDate?: string
+  endDate?: string
   responsibilities: ExperienceResponsibility[]
   technologyGroups: ExperienceTechnologyGroup[]
   linkedinUrl?: string

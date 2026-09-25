@@ -42,7 +42,7 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'en',
       },
-      title: 'Digvijaysinh Rajput | Full Stack Developer',
+      title: 'Digvijaysinh Rajput | Associate Full Stack Developer',
       link: [
         {
           rel: 'icon',

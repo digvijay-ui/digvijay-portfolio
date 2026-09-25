@@ -111,7 +111,7 @@ The legacy design document at `docs/design (2).md` points to this finalized syst
 
 ## About and Experience story — September 2026
 
-- Employment information was checked before redesigning the copy. The bundled resume identifies the current position as **Full Stack Developer Intern at Brainzym Private Ltd, Jan 2026 – Present**. The matching public LinkedIn profile still lists BrainZym as the current employer and the 2022–2026 education period, but does not expose the exact role title publicly. The portfolio therefore retains the resume title and dates rather than inferring a promotion or employment change.
+- Employment copy now reflects the confirmed current position, **Associate Full Stack Developer (Full-time) at Brainzym Private Ltd**. Only the current full-time role is displayed; no unprovided employment date or additional responsibility was added.
 - The About statement condenses verified work already present in the resume: responsive interfaces, REST APIs, database-backed workflows and production delivery. It introduces no new title, metric or availability claim.
 - The diagram is HTML and inline SVG only. It maps the existing interface, API and data technologies without network assets, canvas work or continuous animation.
 - Experience responsibilities were shortened into five evidence-based ownership areas: production feature delivery, admin dashboard ownership, student access, reliability work and collaboration with the tech lead and product owner. No unsupported counts or performance percentages were added.

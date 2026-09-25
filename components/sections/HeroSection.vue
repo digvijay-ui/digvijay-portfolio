@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 import HeroWorld from './HeroWorld.vue'
+import { portfolioData } from '~/data/portfolio'
 
 const hero = ref<HTMLElement | null>(null)
 const entered = ref(false)
@@ -56,7 +57,7 @@ onBeforeUnmount(() => dispose())
       <p class="night-hero__eyebrow mono hero-enter"></p>
       <h1 id="hero-title">
         <span class="hero-enter">Digvijaysinh Rajput</span>
-        <span class="hero-enter"><em>Full Stack Developer.</em></span>
+        
         <span class="hero-enter">Building products that scale.</span>
       </h1>
       <p class="night-hero__description hero-enter">I build responsive interfaces and reliable full-stack products with Vue, React, TypeScript, Node.js and PostgreSQL.</p>

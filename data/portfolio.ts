@@ -2,7 +2,7 @@ import type { PortfolioData } from '~/types/portfolio'
 
 export const portfolioData: PortfolioData = {
   name: 'Digvijaysinh Rajput',
-  role: '',
+  role: 'plea',
   location: 'Bengaluru, Karnataka, India',
   email: 'rajputdigvijaysinh45@gmail.com',
   about: {
